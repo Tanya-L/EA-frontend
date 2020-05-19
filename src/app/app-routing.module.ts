@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import {HomeComponent} from './layouts/home/home.component';
+import {ContactComponent} from './components/contact/contact.component';
+import {OmOssComponent} from './components/om-oss/om-oss.component';
+
+const routes: Routes = [
+  {path: '', component: HomeComponent, pathMatch: 'full' },
+  {path: 'om-oss', component: OmOssComponent, pathMatch: 'full' },
+  {path: 'contact', component: ContactComponent, pathMatch: 'full' },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,0 +1,10 @@
+.nav-bar {
+  background-color: #e6ebf1;
+}
+
+.container-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
