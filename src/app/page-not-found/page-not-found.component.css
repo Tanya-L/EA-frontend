@@ -1,6 +1,10 @@
 .page404 {
   padding: 10%;
-  background-color: #888888;
-  color: red;
   text-align: center;
+}
+
+p {
+  font-size: xx-large;
+  font-weight: bold;
+  color: red;
 }

@@ -11,7 +11,7 @@
 .nav-bar {
   background-color: yellow;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   padding: 10px;
 }
 

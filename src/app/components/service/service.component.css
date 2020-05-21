@@ -1,0 +1,11 @@
+:host {
+  display: flex;
+  justify-content: center;
+  background-color: aquamarine;
+  flex-direction: column;
+}
+
+.behandlingar {
+  font-size: 18px;
+  text-align: center;
+}
