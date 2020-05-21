@@ -1,7 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 1em; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 * {
   font-family: 'Roboto', Arial, sans-serif;
@@ -11,8 +17,8 @@ body { margin: 1em; font-family: Roboto, "Helvetica Neue", sans-serif; }
   -moz-osx-font-smoothing: grayscale;
 }
 
-router-outlet + *  {
-  padding: 0 16px;
+router-outlet + * {
+  padding: 0;
 }
 
 /* Text */
@@ -45,91 +51,22 @@ a:hover {
   opacity: 0.8;
 }
 
-/*!* Input *!*/
-
-/*input {*/
-/*  font-size: 14px;*/
-/*  border-radius: 2px;*/
-/*  padding: 8px;*/
-/*  margin-bottom: 16px;*/
-/*  border: 1px solid #BDBDBD;*/
-/*}*/
-
-/*label {*/
-/*  font-size: 12px;*/
-/*  font-weight: bold;*/
-/*  margin-bottom: 4px;*/
-/*  display: block;*/
-/*  text-transform: uppercase;*/
-/*}*/
-
-/*!* Button *!*/
-/*.button, button {*/
-/*  display: inline-flex;*/
-/*  align-items: center;*/
-/*  padding: 8px 16px;*/
-/*  border-radius: 2px;*/
-/*  font-size: 14px;*/
-/*  cursor: pointer;*/
-/*  background-color: #91d219;*/
-/*  color: white;*/
-/*  border: none;*/
-/*}*/
-
-/*.button:hover, button:hover {*/
-/*  opacity: 0.8;*/
-/*  font-weight: normal;*/
-/*}*/
-
-/*.button:disabled, button:disabled {*/
-/*  opacity: 0.5;*/
-/*  cursor: auto;*/
-/*}*/
-
-/* Fancy Button */
-
-.fancy-button {
-  background-color: white;
-  color: #1976d2;
-}
-
-.fancy-button i.material-icons {
-  color: black;
-  padding-right: 4px;
-}
-
-
 
 /* Nav Bar */
 
-app-nav-bar {
-  width: 100%;
-  height: 50px;
-  padding: 16px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-app-nav-bar h1 {
-  color: black;
-  margin: 0;
-  justify-items: center;
-  position: relative;
-}
-
-/*!* Checkout Cart, Shipping Prices *!*/
-
-/*.cart-item, .shipping-item {*/
+/*app-nav-bar {*/
+/*  margin: 0;*/
 /*  width: 100%;*/
-/*  min-width: 600px;*/
-/*  max-width: 650px;*/
+/*  height: 100%;*/
 /*  display: flex;*/
 /*  flex-direction: row;*/
 /*  justify-content: space-between;*/
-/*  padding: 16px 32px;*/
-/*  margin-bottom: 8px;*/
-/*  border-radius: 2px;*/
-/*  background-color: #EEEEEE;*/
+/*  align-items: flex-end;*/
+/*}*/
+
+/*app-nav-bar h1 {*/
+/*  color: black;*/
+/*  margin: 0;*/
+/*  justify-items: center;*/
+/*  position: relative;*/
 /*}*/

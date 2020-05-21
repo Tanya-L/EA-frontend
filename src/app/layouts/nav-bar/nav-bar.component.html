@@ -1,18 +1,21 @@
 <div class="nav-bar">
-
-  <div class="container-btn">
-
-      <a [routerLink]="['/om-oss']" class="button fancy-button">
-        <i class="material-icons">face</i></a>
-
-      <a [routerLink]="['/behandlingar']" class="button fancy-button">
-        <i class="material-icons">local_hospital</i></a>
-
-      <a [routerLink]="['/contact']" class="button fancy-button">
-        <i class="material-icons">contacts</i></a>
-
-      <a [routerLink]="['/shop']" class="button fancy-button">
+  <div class="row">
+    <div class="col">
+      <a [routerLink]="['/']">
+        <i class="material-icons">home</i></a>
+    </div>
+    <div class="col">
+      <a [routerLink]="['/om-oss']">Om oss</a>
+    </div>
+      <div class="col">
+      <a [routerLink]="['/service']">Behandlingar</a>
+      </div>
+        <div class="col">
+      <a [routerLink]="['/contact']">Kontakt</a>
+    </div>
+    <div class="col">
+      <a [routerLink]="['/shop']">
         <i class="material-icons">local_grocery_store</i></a>
-
+    </div>
   </div>
 </div>

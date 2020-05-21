@@ -1,10 +1,19 @@
+/*:host {*/
+/*  display: flex;*/
+/*  align-items: baseline;*/
+/*  justify-content: center;*/
+/*  align-content: space-around;*/
+/*  padding: 0;*/
+/*  width: 100%;*/
+/*  height: auto;*/
+/*}*/
+
 .nav-bar {
-  background-color: #e6ebf1;
+  background-color: yellow;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
 }
 
-.container-btn {
-  display: flex;
-  justify-content: flex-end;
-}
 
 

@@ -1,4 +1,14 @@
-.header {
-  color: yellow;
-  background-color: #888888;
+:host {
+  display: flex;
+  align-items: center;
+  margin: 0;
 }
+.header {
+  height: 20em;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  background-color: cornflowerblue;
+  padding: 10px;
+}
+

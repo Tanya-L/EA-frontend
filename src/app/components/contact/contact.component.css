@@ -1,3 +1,10 @@
+.contact {
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+
+}
+
 iframe {
   align-content: center;
 }
@@ -5,3 +12,5 @@ iframe {
 .oppetider {
   color: red;
 }
+
+
