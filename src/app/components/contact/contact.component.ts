@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import * as ContactFoto from 'src/app/components/contact/assets/028cat.png';
+import * as Phone from 'src/app/components/contact/assets/headphones.png';
+import * as Mail from 'src/app/components/contact/assets/mail.png';
+import * as Pin from 'src/app/components/contact/assets/pin.png';
 
 @Component({
   selector: 'app-contact',
@@ -7,7 +9,9 @@ import * as ContactFoto from 'src/app/components/contact/assets/028cat.png';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-public contactFoto: string = ContactFoto.default;
+public phone: string = Phone.default;
+public mail: string = Mail.default;
+public pin: string = Pin.default;
 
   constructor() { }
 

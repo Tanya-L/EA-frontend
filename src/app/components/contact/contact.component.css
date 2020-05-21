@@ -1,13 +1,39 @@
 .contact {
-  background-color: grey;
+  /*background-color: grey;*/
+  padding: 15px;
+  text-align: center;
 }
 
 iframe {
-  align-content: center;
+  align-content: space-around;
 }
 
-.oppetider {
+.close {
   color: red;
+  text-align: center;
+  margin: 0;
+  float: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card-text {
+  font-size: large;
+}
+
+.card-img-top {
+  padding: 10px;
+  align-items: center;
+}
+
+.tel {
+  color: red;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 
