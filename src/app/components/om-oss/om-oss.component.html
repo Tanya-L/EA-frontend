@@ -1,11 +1,11 @@
 <app-nav-bar></app-nav-bar>
+<div>
 
 <div class="info">
   <h1>Om oss</h1>
+
   <p>Kungsängens veterinärklinik drivs av familjen Lenart – Nowakowski.</p>
-
   <p>Hubert Nowakowski har oavbrutet arbetat med smådjur sedan år 2000.</p>
-
   <p>Mitt första jobb var på Universitetsdjursjukhuset i Lublin, Polen.</p>
 
   <p>I 10 år har jag arbetat med forskning. Sedan 2005 har jag doktorerat i internmedicin och laboratoriediagnostik. Två år
@@ -24,3 +24,48 @@
   mer effektivt. Hemligheten ligger ofta i väldigt små detaljer…</p>
   <button class="btn btn-primary">TEST</button>
 </div>
+
+  <div class="row justify-content-evenly">
+    <!-- left card -->
+    <div class="col-md-3 card bg-light">
+      <div class="row">
+        <div class="col"><img class="card-img-top" [src]="phone"
+                              alt="telephone" style="width: 100px"></div>
+        <div class="col"><img class="card-img-top" [src]="mail"
+                              alt="mail" style="width: 100px"></div>
+      </div>
+
+      <div class="card-body text-center">
+        <h4 class="card-title">Ring eller Skriva</h4>
+        <p class="card-text tel">070 095-48-84</p>
+        <p class="card-text">info@kungsvet.se</p>
+      </div>
+    </div>
+
+    <!-- center card -->
+    <div class="col-md-3 card bg-light">
+      <div class="card-body text-center">
+        <h4 class="card-title">Oppetider:</h4>
+        <p class="card-text">
+        <ul>
+          <li>Måndag:
+            <time style="color: #1976d2">8:00-21:00</time>
+          </li>
+          <li>Tisdag:
+            <time>8:00-16:00</time>
+          </li>
+          <li>Onsdag:
+            <time style="color: #1976d2">8:00-21:00</time>
+          </li>
+          <li>Torsdag:
+            <time>8:00-16:00</time>
+          </li>
+          <li>Fredag:
+            <time>8:00-16:00</time>
+          </li>
+        </ul>
+        <br/>
+        <p class="close">Lordag, Sondag: stäng</p>
+      </div>
+    </div>
+    </div>

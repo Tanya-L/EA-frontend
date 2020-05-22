@@ -70,3 +70,7 @@ a:hover {
 /*  justify-items: center;*/
 /*  position: relative;*/
 /*}*/
+
+.justify-content-evenly{
+  justify-content: space-evenly;
+}

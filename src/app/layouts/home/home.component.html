@@ -1,18 +1,64 @@
 <app-nav-bar></app-nav-bar>
 <app-header></app-header>
 <div class="home">
-  <div class="row">
-    <div class="col-sm-1"></div>
-    <div class="col-sm-3">
-      <h3>Column 1 home component</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p></div>
-    <div class="col-sm-4">bla bla bla</div>
-    <div class="col-sm-3">
-      <h3>Column 1 home component</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p></div>
-  </div>
-  <div class="col-sm-1"></div>
+  <div class="row justify-content-evenly">
+    <!-- left card -->
+    <div class="col-md-4 card ">
+      <div class="row">
+        <img class="card-img-top" [src]="mail"
+                              alt="mail" style="width: 100px">
+      </div>
+
+      <div class="card-body text-center">
+        <h4 class="card-title">Ring eller Skriva</h4>
+        <p class="card-text tel">070 095-48-84</p>
+        <p class="card-text">info@kungsvet.se</p>
+      </div>
+    </div>
+
+    <!-- center card -->
+    <div class="col-md-4 card ">
+      <div class="row">
+        <img class="card-img-top" [src]="phone"
+             alt="telephone" style="width: 100px">
+      </div>
+
+      <div class="card-body text-center">
+        <h4 class="card-title">Oppetider:</h4>
+        <p class="card-text">
+        <ul>
+          <li>Måndag:
+            <time style="color: #1976d2">8:00-21:00</time>
+          </li>
+          <li>Tisdag:
+            <time>8:00-16:00</time>
+          </li>
+          <li>Onsdag:
+            <time style="color: #1976d2">8:00-21:00</time>
+          </li>
+          <li>Torsdag:
+            <time>8:00-16:00</time>
+          </li>
+          <li>Fredag:
+            <time>8:00-16:00</time>
+          </li>
+        </ul>
+        <br/>
+        <p class="close">Lordag, Sondag: stäng</p>
+      </div>
+    </div>
+
+    <!-- center card -->
+    <div class="col-md-4 card ">
+      <i class="material-icons">alarm</i>
+      <div class="card-body text-center">
+        <h4 class="card-title">Boka tid:</h4>
+        <p class="card-text">
+            Se lediga tjanster och boka tid
+        </p>
+        <a class="btn bg-light" [routerLink]="['/booking']">Ga till bokning</a>
+      </div>
+    </div>
+
 </div>
 <app-footer></app-footer>

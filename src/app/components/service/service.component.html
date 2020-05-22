@@ -1,9 +1,9 @@
 <app-nav-bar></app-nav-bar>
 
-<div class="service">
+<div *ngIf="openService === ''; else elseBlock" class="service">
   <h1>Vi erbjuder</h1>
   <!--First row-->
-  <div class="row">
+  <div class="row justify-content-evenly">
 
     <!-- 1 card -->
     <div class="col-sm-2 card bg-light">
@@ -12,6 +12,7 @@
       <div class="card-body text-center">
         <h4 class="card-title">Gastroskori</h4>
         <p class="card-text"></p>
+        <a (click)="setService('gastro')" class="btn btn-light">Läs mer</a>
       </div>
     </div>
 
@@ -62,12 +63,13 @@
       <div class="card-body text-center">
         <h4 class="card-title">Blodprovstagning och diagnostik på plats</h4>
         <p class="card-text"></p>
+        <a (click)="setService('blood')" class="btn btn-light">Läs mer</a>
       </div>
     </div>
   </div>
 
-<!--Second row-->
-  <div class="row">
+  <!--Second row-->
+  <div class="row justify-content-evenly">
     <!-- 1 card -->
     <div class="col-sm-2 card bg-light">
       <img class="card-img-top" [src]="ekg"
@@ -86,7 +88,7 @@
       <div class="card-body text-center">
         <h4 class="card-title">Tandvård</h4>
         <p class="card-text"></p>
-
+        <a (click)="setService('molar')" class="btn btn-light">Läs mer</a>
       </div>
     </div>
 
@@ -129,3 +131,36 @@
     </div>
   </div>
 </div>
+<ng-template #elseBlock>
+  <button (click)="setService('')" class="service-back-button"> <= Go back</button>
+  <div [ngSwitch]="openService" class="service-article">
+    <div *ngSwitchCase="'gastro'">
+      <h1>Gastro</h1>
+    </div>
+
+<!--  1/6  -->
+    <div *ngSwitchCase="'blood'">
+
+      <div class="service-article-layout" style="background-image: url(http://www.kungsvet.se/wp-content/uploads/2018/09/struvitesediment.jpg);">
+        <h1>Blodprovstagning och diagnostik på plats</h1>
+        <p>Vi har samma blod- och labbaparater som de stora djursjukhusen i närheten.</p>
+        <p>Vi samarbetar med certifierade laboratorier i Sverige och Tyskland för att täcka de få prover som vi inte kan analysera på plats.</p>
+        <p>Har du ett prov som du vill skicka för avel eller i ett annat syfte kan vi hjälpa dig med detta?</p>
+      </div>
+    </div>
+<!-- 2/2-->
+    <div *ngSwitchCase="'molar'">
+
+      <div class="service-article-layout" style="background-image: url(http://www.kungsvet.se/wp-content/uploads/2018/09/puppy-recovery-1-1388474-639x701.jpg);">
+        <h1>Tandvård</h1>
+         <p>Dålig tandhygien kan i vissa fall leda till problem med hjärtklaffar. Hos vissa djur är det svårt att förebygga tandsten. Detta kan bero på många olika orsaker. Då måste man sanera munnen med hjälp av specialutrustning.</p>
+        <p>Första tecken på problem i munnen kan vara dålig andedräkt eller minskat foderintag.
+      Har det gått för långt kan det leda till att man måste dra ut en eller flera tänder.
+        Vi erbjuder tandstenssanering med ultraljud samt tandröntge</p>
+      </div>
+    </div>
+    <div *ngSwitchDefault>Ololo</div>
+  </div>
+
+
+</ng-template>

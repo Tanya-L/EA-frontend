@@ -9,11 +9,22 @@
 /*}*/
 
 .nav-bar {
-  background-color: yellow;
+  background-color: white;
   display: flex;
   justify-content: flex-end;
   padding: 10px;
 }
 
+.logoLink {
+  width: 300px;
+  display: block;
+}
 
+.logoLink img {
+  width: 100%;
+}
+
+.nav-link {
+  display: flex;
+}
 

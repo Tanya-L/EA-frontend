@@ -12,7 +12,6 @@ import * as Dialys from 'src/app/components/service/assets/014-kidneys.png';
 import * as Hospital from 'src/app/components/service/assets/079-hospital.png';
 import * as Pasport from 'src/app/components/service/assets/001-id.png';
 
-
 @Component({
   selector: 'app-service',
   templateUrl: './service.component.html',
@@ -31,10 +30,14 @@ export class ServiceComponent implements OnInit {
   public dialys: string = Dialys.default;
   public hostipal: string = Hospital.default;
   public pasport: string = Pasport.default;
+  public openService = '';
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  setService(service: string) {
+    this.openService = service;
+  }
 }

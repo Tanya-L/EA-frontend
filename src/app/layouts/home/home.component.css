@@ -1,3 +1,6 @@
 .home {
   background-color: #166f8a;
 }
+.home .material-icons {
+  font-size: 91px;
+}
