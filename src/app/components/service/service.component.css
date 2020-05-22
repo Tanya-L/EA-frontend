@@ -9,6 +9,7 @@
   font-size: 18px;
   text-align: center;
   padding: 15px;
+  background-color: #9adcef;
 }
 
 .card {
@@ -61,7 +62,7 @@
 }
 
 .service-article-layout p{
-  font-size: 20px;
+  font-size: 18px;
   text-align: left;
-  margin-top: 1em;
+  margin: 0;
 }

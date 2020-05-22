@@ -1,6 +1,10 @@
 .home {
-  background-color: #166f8a;
+  background-color: #9adcef;
+  padding: 15px;
+  text-align: center;
 }
 .home .material-icons {
   font-size: 91px;
 }
+
+

@@ -5,8 +5,12 @@
     <!-- left card -->
     <div class="col-md-4 card ">
       <div class="row">
+        <img class="card-img-top" [src]="phone"
+             alt="telephone" style="width: 100px">
+      </div>
+      <div class="row">
         <img class="card-img-top" [src]="mail"
-                              alt="mail" style="width: 100px">
+             alt="mail" style="width: 100px">
       </div>
 
       <div class="card-body text-center">
@@ -18,11 +22,7 @@
 
     <!-- center card -->
     <div class="col-md-4 card ">
-      <div class="row">
-        <img class="card-img-top" [src]="phone"
-             alt="telephone" style="width: 100px">
-      </div>
-
+      <i class="material-icons">alarm</i>
       <div class="card-body text-center">
         <h4 class="card-title">Oppetider:</h4>
         <p class="card-text">
@@ -47,18 +47,23 @@
         <p class="close">Lordag, Sondag: stäng</p>
       </div>
     </div>
-
-    <!-- center card -->
+    <!-- right card -->
     <div class="col-md-4 card ">
-      <i class="material-icons">alarm</i>
+      <i class="material-icons">event</i>
       <div class="card-body text-center">
         <h4 class="card-title">Boka tid:</h4>
         <p class="card-text">
-            Se lediga tjanster och boka tid
+          Se lediga tjanster och boka tid
         </p>
         <a class="btn bg-light" [routerLink]="['/booking']">Ga till bokning</a>
       </div>
     </div>
+  </div>
 
+<!--  <div class="bg-light">-->
+<!--    <h1>Vår vision är att ge dig högklassigt veterinärvård präglad av empati och omtanke</h1>-->
+<!--<img [src]="vision" alt="info" style="width: 200%">-->
+<!--  </div>-->
 </div>
-<app-footer></app-footer>
+  <app-footer></app-footer>
+

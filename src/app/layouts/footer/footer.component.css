@@ -2,3 +2,7 @@
   display: flex;
   justify-content: flex-end;
 }
+
+fb-like {
+  border-radius: 10px;
+}

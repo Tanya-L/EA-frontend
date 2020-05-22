@@ -32,11 +32,12 @@ h2 {
 }
 
 h1, h2 {
-  font-weight: normal;
+  font-weight: bold;
 }
 
 p {
-  font-size: 14px;
+  font-size: large;
+  text-align: left;
 }
 
 /* Hyperlink */

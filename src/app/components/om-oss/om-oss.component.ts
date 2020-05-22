@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import * as Phone from '../contact/assets/headphones.png';
+import * as Foto1 from '../om-oss/assets/hubert.jpg';
+import * as Foto2 from '../om-oss/assets/agnes_01.jpg';
+
 
 
 @Component({
@@ -8,7 +10,8 @@ import * as Phone from '../contact/assets/headphones.png';
   styleUrls: ['./om-oss.component.css', '../contact/contact.component.css']
 })
 export class OmOssComponent implements OnInit {
-  public phone: string = Phone.default;
+  public foto1: string = Foto1.default;
+  public foto2: string = Foto2.default;
 
   constructor() { }
 

@@ -1,7 +1,10 @@
 .contact {
-  /*background-color: grey;*/
+  background-color: #9adcef;
   padding: 15px;
   text-align: center;
+}
+.contact .material-icons {
+  font-size: 91px;
 }
 
 iframe {
@@ -12,6 +15,7 @@ iframe {
   margin: 10px;
   flex: 0 0 calc(25% - 20px);
   max-width: 25%;
+  padding: 30px 10px 20px;
 }
 
 .close {

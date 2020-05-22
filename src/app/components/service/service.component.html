@@ -8,48 +8,50 @@
     <!-- 1 card -->
     <div class="col-sm-2 card bg-light">
       <img class="card-img-top" [src]="gastro"
-           alt="pin" style="width: 100px; height: 100px">
+           alt="gastro" style="width: 100px; height: 100px">
       <div class="card-body text-center">
         <h4 class="card-title">Gastroskori</h4>
         <p class="card-text"></p>
-        <a (click)="setService('gastro')" class="btn btn-light">Läs mer</a>
       </div>
     </div>
 
     <!-- 2 card -->
     <div class="col-sm-2 card bg-light">
       <img class="card-img-top" [src]="bronko"
-           alt="pin" style="width: 100px; height: 100px">
+           alt="bronko" style="width: 100px; height: 100px">
       <div class="card-body text-center">
         <h4 class="card-title">Bronkoskopi</h4>
         <p class="card-text"></p>
+        <a (click)="setService('bronko')" class="btn btn-light">Läs mer</a>
       </div>
     </div>
 
     <!-- 3 card -->
     <div class="col-sm-2 card bg-light">
       <img class="card-img-top" [src]="kardio"
-           alt="pin" style="width: 100px; height: 100px">
+           alt="kardio" style="width: 100px; height: 100px">
       <div class="card-body text-center">
         <h4 class="card-title">Kardiologi</h4>
         <p class="card-text"></p>
+        <a (click)="setService('kardio')" class="btn btn-light">Läs mer</a>
       </div>
     </div>
 
     <!-- 4 card -->
     <div class="col-ms-2 card bg-light">
       <img class="card-img-top" [src]="monitor"
-           alt="pin" style="width: 100px; height: 100px">
+           alt="monitor" style="width: 100px; height: 100px">
       <div class="card-body text-center">
         <h4 class="card-title">Ultraljud buk och hjärta</h4>
         <p class="card-text"></p>
+        <a (click)="setService('monitor')" class="btn btn-light">Läs mer</a>
       </div>
     </div>
 
     <!-- 5 card -->
     <div class="col-md-3 card bg-light">
       <img class="card-img-top" [src]="kirurgi"
-           alt="pin" style="width: 100px; height: 100px">
+           alt="scalpel" style="width: 100px; height: 100px">
       <div class="card-body text-center">
         <h4 class="card-title">Mjukdelskirurgi</h4>
         <p class="card-text"></p>
@@ -59,7 +61,7 @@
     <!-- 6 card -->
     <div class="col-md-3 card bg-light">
       <img class="card-img-top" [src]="blood"
-           alt="pin" style="width: 100px; height: 100px">
+           alt="blood" style="width: 100px; height: 100px">
       <div class="card-body text-center">
         <h4 class="card-title">Blodprovstagning och diagnostik på plats</h4>
         <p class="card-text"></p>
@@ -73,18 +75,18 @@
     <!-- 1 card -->
     <div class="col-sm-2 card bg-light">
       <img class="card-img-top" [src]="ekg"
-           alt="pin" style="width: 100px; height: 100px">
+           alt="monitor" style="width: 100px; height: 100px">
       <div class="card-body text-center">
         <h4 class="card-title">Sövning av patienter med hjärtproblem</h4>
         <p class="card-text"></p>
-
+        <a (click)="setService('ekg')" class="btn btn-light">Läs mer</a>
       </div>
     </div>
 
     <!-- 2 card -->
     <div class="col-sm-2 card bg-light">
       <img class="card-img-top" [src]="molar"
-           alt="pin" style="width: 100px; height: 100px">
+           alt="tooth" style="width: 100px; height: 100px">
       <div class="card-body text-center">
         <h4 class="card-title">Tandvård</h4>
         <p class="card-text"></p>
@@ -95,26 +97,28 @@
     <!-- 3 card -->
     <div class="col-sm-2 card bg-light">
       <img class="card-img-top" [src]="syringe"
-           alt="pin" style="width: 100px; height: 100px">
+           alt="syringe" style="width: 100px; height: 100px">
       <div class="card-body text-center">
         <h4 class="card-title">Vaccinationer, besiktning</h4>
         <p class="card-text"></p>
+        <a (click)="setService('syringe')" class="btn btn-light">Läs mer</a>
       </div>
     </div>
 
     <!-- 4 card -->
     <div class="col-ms-2 card bg-light">
       <img class="card-img-top" [src]="dialys"
-           alt="pin" style="width: 100px; height: 100px">
+           alt="dialys" style="width: 100px; height: 100px">
       <div class="card-body text-center">
         <h4 class="card-title">Dialys</h4>
         <p class="card-text"></p>
+        <a (click)="setService('dialys')" class="btn btn-light">Läs mer</a>
       </div>
     </div>
     <!-- 5 card -->
     <div class="col-md-3 card bg-light">
       <img class="card-img-top" [src]="hostipal"
-           alt="pin" style="width: 100px; height: 100px">
+           alt="hostital" style="width: 100px; height: 100px">
       <div class="card-body text-center">
         <h4 class="card-title">Avlivningar</h4>
         <p class="card-text"></p>
@@ -123,7 +127,7 @@
     <!-- 6 card -->
     <div class="col-md-3 card bg-light">
       <img class="card-img-top" [src]="pasport"
-           alt="pin" style="width: 100px; height: 100px">
+           alt="passport" style="width: 100px; height: 100px">
       <div class="card-body text-center">
         <h4 class="card-title">Avmaskning, pass</h4>
         <p class="card-text"></p>
@@ -131,36 +135,138 @@
     </div>
   </div>
 </div>
+
 <ng-template #elseBlock>
   <button (click)="setService('')" class="service-back-button"> <= Go back</button>
   <div [ngSwitch]="openService" class="service-article">
+    <!-- 1/1-->
     <div *ngSwitchCase="'gastro'">
       <h1>Gastro</h1>
     </div>
-
-<!--  1/6  -->
+    <!-- 1/2-->
+    <div *ngSwitchCase="'bronko'">
+      <div class="service-article-layout"
+           style="background-image: url(http://www.kungsvet.se/wp-content/uploads/2018/09/85290eaf7a274214a4fc0be85eed465d-1.jpeg);">
+        <h1>Trakeala stenter för patienter med förträngningar i övre luftvägar</h1>
+        <p>Många hundar av framförallt småraser har problem att andas genom sina luftvägar. Detta kan bero på flera
+          orsaker. Dessa problem kallas ofta för dyspné och kan efter flera år leda till cirkulatoriska problem,
+          försämrad livskvalité och kortare liv som följd. De flesta dyspnéer från övre luftvägar kan åtgärdas
+          kirurgiskt i dagsläget. Dessa åtgärder förbättrar och förlänger djurets liv.</p>
+        <p>Hubert var en av de första i Sverige att utföra ett ingrepp på kollaberat trakea med den nya metoden, utan
+          den massiva gammastrålningen som patienten utsätts för vid Fluoroskopi.</p>
+        <p>Vi använder de bästa tillgängliga stenter som finns på världsmarknaden.
+          Vi har ett exklusivt avtal med Enyvet, Ltd som är den enda leverantören i Europa för Nitinolstenter som är
+          tillverkade och registrerade för djur. Materialet är det senaste som används även i humanvården.
+          Om din hund lider av kroniska luftvägsproblem eller har diagnoserats för trakeal kollaps, kontakta oss. Vi
+          hjälper dig och berättar om möjligheterna!</p>
+      </div>
+    </div>
+    <!-- 1/3-->
+    <div *ngSwitchCase="'kardio'">
+      <div class="service-article-layout"
+           style="background-image: url(http://www.kungsvet.se/wp-content/uploads/2018/09/trikuspid.jpg);">
+        <h1>Kardiologi</h1>
+        <p>Doberman DCM screening undersökningar
+          Hjärtundersökningar på hundar och katter.
+          Bedömning av narkosrisk på hjärtsjuka patienter
+          HCM screening – inom kort</p>
+      </div>
+    </div>
+    <!-- 1/4-->
+    <div *ngSwitchCase="'monitor'">
+      <div class="service-article-layout"
+           style="background-image: url(http://www.kungsvet.se/wp-content/uploads/2018/09/tumr.jpg);">
+        <h1>Ultraljud</h1>
+        <p>Ultraljud är den bästa undersökningen av mjukdelar som kan göras utan sövning. Vi är stolta att kunna erbjuda
+          ulraljudsundersökningar av högsta kvalitet, såväl buk, muskler, knölar, senor, testiklar som hjärta. Vi utför
+          undersökningar i djurets naturliga position utan rakning.
+          Optimalt för bukundersökningen bör djuret helst ha fastat 6-10 timmar före besöket för att minska mängden gas
+          och träck i tarmen. Djuret ska däremot inte ha kissat före besöket.</p>
+        <p>Fosterdiagnostik:</p>
+        <p>På små tikar och katter kan vi bekräfta graviditeten med ultraljud redan vid 14 dagar efter parningen.
+          En mer omfattande graviditetsundersökning (inklusive könsbestämning) kan göras vid c:a 17-19 dagen efter
+          parningen. Observera att en sådan undersökning tar längre tid och bara kan utföras på kliniken. En
+          förutsättning är att tiken håller sig lugn under undersökningen.
+          Vi har även en bärbar ultraljudsenhet och kan därför utföra enkel dräktighetsundersökning i hemmamiljö.</p>
+      </div>
+    </div>
+    <!--  1/6  -->
     <div *ngSwitchCase="'blood'">
-
-      <div class="service-article-layout" style="background-image: url(http://www.kungsvet.se/wp-content/uploads/2018/09/struvitesediment.jpg);">
+      <div class="service-article-layout"
+           style="background-image: url(http://www.kungsvet.se/wp-content/uploads/2018/09/struvitesediment.jpg);">
         <h1>Blodprovstagning och diagnostik på plats</h1>
         <p>Vi har samma blod- och labbaparater som de stora djursjukhusen i närheten.</p>
-        <p>Vi samarbetar med certifierade laboratorier i Sverige och Tyskland för att täcka de få prover som vi inte kan analysera på plats.</p>
+        <p>Vi samarbetar med certifierade laboratorier i Sverige och Tyskland för att täcka de få prover som vi inte kan
+          analysera på plats.</p>
         <p>Har du ett prov som du vill skicka för avel eller i ett annat syfte kan vi hjälpa dig med detta?</p>
       </div>
     </div>
-<!-- 2/2-->
+    <!-- 2/1-->
+    <div *ngSwitchCase="'ekg'">
+      <div class="service-article-layout"
+           style="background-image: url(http://www.kungsvet.se/wp-content/uploads/2018/09/trikuspid.jpg);">
+        <h1>Sövning av patienter med blåsljud</h1>
+        <p>Har ditt djur ett blåsljud på hjärtat?</p>
+        <p>Då tillhör det en högre riskgrupp. För att bestämma typ av narkos måste fler hjärtegenskaper granskas och
+          utifrån dessa brister som upptäcks kan man bestämma hur man ska gå vidare. </p>
+        <p>Vår kardiolog Hubert har flera års erfarenhet med att skräddarsy narkos för hjärtsjuka patienter. Han delar
+          gärna med sig sin erfarenhet vid besöket.</p>
+      </div>
+    </div>
+    <!-- 2/2-->
     <div *ngSwitchCase="'molar'">
 
-      <div class="service-article-layout" style="background-image: url(http://www.kungsvet.se/wp-content/uploads/2018/09/puppy-recovery-1-1388474-639x701.jpg);">
+      <div class="service-article-layout"
+           style="background-image: url(http://www.kungsvet.se/wp-content/uploads/2018/09/puppy-recovery-1-1388474-639x701.jpg);">
         <h1>Tandvård</h1>
-         <p>Dålig tandhygien kan i vissa fall leda till problem med hjärtklaffar. Hos vissa djur är det svårt att förebygga tandsten. Detta kan bero på många olika orsaker. Då måste man sanera munnen med hjälp av specialutrustning.</p>
+        <p>Dålig tandhygien kan i vissa fall leda till problem med hjärtklaffar. Hos vissa djur är det svårt att
+          förebygga tandsten. Detta kan bero på många olika orsaker. Då måste man sanera munnen med hjälp av
+          specialutrustning.</p>
         <p>Första tecken på problem i munnen kan vara dålig andedräkt eller minskat foderintag.
-      Har det gått för långt kan det leda till att man måste dra ut en eller flera tänder.
-        Vi erbjuder tandstenssanering med ultraljud samt tandröntge</p>
+          Har det gått för långt kan det leda till att man måste dra ut en eller flera tänder.
+          Vi erbjuder tandstenssanering med ultraljud samt tandröntge</p>
+      </div>
+    </div>
+    <!-- 2/3-->
+    <div *ngSwitchCase="'syringe'">
+      <div class="service-article-layout"
+           style="background-image:
+         url(http://www.kungsvet.se/wp-content/uploads/2018/09/07cc9afb6efe43bea6ef833a1c039771.jpg);">
+        <h1>Vaccinationer</h1>
+        <h3>Katt</h3>
+        <p>Har du en katt kan du få den vaccinerad mot kattpest och kattsnuva.
+          Rekommendationen är att vaccinera vid 9 veckors ålder, vid 12 veckor, vid 1 års ålder samt därefter varje
+          år.
+          Utöver detta erbjuder vi också vaccination mot rabies och leptospiros om du ska resa utomlands med ditt djur.
+          För regler gällande införsel av djur till andra länder och återinförsel/import till Sverige hänvisar vi till
+          SVERAK, telefon 033 10 15 65, hemsida: <a href="https://www.sverak.se">SVERAK</a></p>
+        <h3>Hund</h3>
+        <p>Vi vaccinerar hundar mot valpsjuka, hepatit och parvovirus (trippelvaccination) och mot kennelhosta
+          (parainfluensa). Grundvaccination sker vid 8 veckor, 12 veckor och vid ett års ålder. Därefter var 3:e år,
+          eller varje år, beroende på det vaccin som används.</p>
+        <h3>Vi vaccinerar hästar, kaniner och illrar och har både levande och avdödat vaccin.</h3>
+        <p>Gäller ditt besök hos oss endast ditt djurs årliga vaccination behöver du inte beställa tid utan kan komma
+          när  det passar dig under våra öppettider. För vaccination mot rabies och leptospiros krävs bokad tid.</p>
+      </div>
+    </div>
+    <!-- 2/4-->
+    <div *ngSwitchCase="'dialys'">
+      <div class="service-article-layout"
+           style="background-image:
+         url(http://www.kungsvet.se/wp-content/uploads/2018/09/e24f2ffba6cc4302962f4b91ac8be1f0.jpeg);">
+        <h1>Dialys</h1>
+        <p>Som veterinär stöter man förr eller senare på patienter vars liv inte går att rädda, inte för man inte vet
+          hur man skulle göra, utan för att man inte har en teknisk möjlighet till det. Bland dessa djur är majoriteten
+          patienter med olika njurskador. T.ex. hundar och katter vars njurar har fått en akut skada, som skulle kunna
+          behandlats, men gick bort p.g.a. höga URAT nivåer i blodet. Många kastrerade katter har en tendens till
+          urinstensbildning. Bland dessa finns ett fåtal som får den ena eller båda uretärer täppta med uringrus eller
+          sand.</p>
+        <p>Till akuta njurproblem hos hundar räknas svåra obstruktiva pyelonefriter eller glykol förgiftning som kan
+          leda till dödsfall om huvudbehandlingen inte får igång njurfiltrationen i tid. Darför har vi bestämt att
+          erbjuda möjlighet till dialys för våra patienter i de fall där den kan rädda liv.</p>
       </div>
     </div>
     <div *ngSwitchDefault>Ololo</div>
   </div>
-
 
 </ng-template>
