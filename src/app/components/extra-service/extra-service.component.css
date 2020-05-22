@@ -1,0 +1,23 @@
+.card {
+  align-items: center;
+  margin: 10px;
+  flex: 0 0 calc(25% - 20px);
+  max-width: 25%;
+  padding: 30px 10px 20px;
+}
+
+.card-text {
+  font-size: large;
+}
+
+.card-img-top {
+  padding: 10px;
+  align-items: center;
+}
+
+.tel {
+  color: red;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}

@@ -13,6 +13,7 @@ import { HeaderComponent } from './layouts/header/header.component';
 import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { ServiceComponent } from './components/service/service.component';
+import { ExtraServiceComponent } from './components/extra-service/extra-service.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ServiceComponent } from './components/service/service.component';
     PageNotFoundComponent,
     HeaderComponent,
     FooterComponent,
-    ServiceComponent
+    ServiceComponent,
+    ExtraServiceComponent
   ],
   imports: [
     BrowserModule,
