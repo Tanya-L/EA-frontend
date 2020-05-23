@@ -14,6 +14,7 @@ import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { ServiceComponent } from './components/service/service.component';
 import { ExtraServiceComponent } from './components/extra-service/extra-service.component';
+import { BookingComponent } from './booking/booking.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ExtraServiceComponent } from './components/extra-service/extra-service.
     HeaderComponent,
     FooterComponent,
     ServiceComponent,
-    ExtraServiceComponent
+    ExtraServiceComponent,
+    BookingComponent
   ],
   imports: [
     BrowserModule,

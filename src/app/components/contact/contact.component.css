@@ -28,7 +28,8 @@ iframe {
 ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding-left: 0px;
+  text-align: center;
 }
 
 .card-text {

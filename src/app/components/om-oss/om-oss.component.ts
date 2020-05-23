@@ -7,7 +7,7 @@ import * as Foto2 from '../om-oss/assets/agnes_01.jpg';
 @Component({
   selector: 'app-om-oss',
   templateUrl: './om-oss.component.html',
-  styleUrls: ['./om-oss.component.css', '../contact/contact.component.css']
+  styleUrls: ['./om-oss.component.css']
 })
 export class OmOssComponent implements OnInit {
   public foto1: string = Foto1.default;
