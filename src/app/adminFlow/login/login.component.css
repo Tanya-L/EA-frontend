@@ -1,0 +1,10 @@
+.admin {
+  background-color: #9adcef;
+  display: flex;
+  justify-content: center;
+}
+
+.login {
+  margin: 10% 0 10% 0;
+  padding: 2rem;
+}

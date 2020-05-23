@@ -15,6 +15,9 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { ServiceComponent } from './components/service/service.component';
 import { ExtraServiceComponent } from './components/extra-service/extra-service.component';
 import { BookingComponent } from './booking/booking.component';
+import { AdminComponent } from './adminFlow/admin/admin.component';
+import { BookCalendarComponent } from './book-calendar/book-calendar.component';
+import { LoginComponent } from './adminFlow/login/login.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { BookingComponent } from './booking/booking.component';
     FooterComponent,
     ServiceComponent,
     ExtraServiceComponent,
-    BookingComponent
+    BookingComponent,
+    AdminComponent,
+    BookCalendarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
