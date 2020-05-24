@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import BookingService from '../booking/booking.service';
 
 @Component({
   selector: 'app-cancel-booking',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CancelBookingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private bookingService: BookingService) { }
 
   ngOnInit() {
   }

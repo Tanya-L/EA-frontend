@@ -1,3 +1,16 @@
-<p>
-  cancel-booking works!
-</p>
+<div>
+  <form class="cancel">
+    <div class="cancel card">
+      <div class="form-group">
+        <h1>Vill du <span>AVBOKA</span> tid hos oss? </h1>
+        <label for="login">Login</label>
+        <input name="login" id="login" type="text" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="cancel">Booknins number</label>
+        <input type="text" id="cancel" class="form-control"></div>
+      <button (click)="bookingService.selectCancellation(false)">Cancel</button>
+      <button type="submit" class="btn btn-danger">AVBOKA</button>
+    </div>
+  </form>
+</div>

@@ -16,7 +16,6 @@ import { ServiceComponent } from './components/service/service.component';
 import { ExtraServiceComponent } from './components/extra-service/extra-service.component';
 import { BookingComponent } from './bookingFlow/booking/booking.component';
 import { AdminComponent } from './adminFlow/admin/admin.component';
-import { BookCalendarComponent } from './bookingFlow/book-calendar/book-calendar.component';
 import { LoginComponent } from './adminFlow/login/login.component';
 import { BookingFormComponent } from './bookingFlow/booking-form/booking-form.component';
 import { CancelBookingComponent } from './bookingFlow/cancel-booking/cancel-booking.component';
@@ -36,7 +35,6 @@ import {FormsModule} from "@angular/forms";
     ExtraServiceComponent,
     BookingComponent,
     AdminComponent,
-    BookCalendarComponent,
     LoginComponent,
     BookingFormComponent,
     CancelBookingComponent

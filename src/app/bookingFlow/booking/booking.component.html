@@ -4,6 +4,7 @@
   <div class="row">
     <div class="col"><p>Välkommen att boka tid hos oss på Kunsängens Veterinär klinik</p>
       <p>Det går också bra att ringa oss för <span>bokning/avbokning</span> eller om du har frågor.</p>
+    <p>Varmt välkommen!</p>
     </div>
     <div class="col">
       <div class="row" style="justify-content: center">
@@ -14,15 +15,24 @@
   </div>
 
 
-  <div class="row">
-    <div class="col">
-      <app-booking-form></app-booking-form>
-    </div>
-    <div class="col">
-      тут будет календарь. пока что форма логина
-      <app-book-calendar></app-book-calendar>
-    </div>
+  <div *ngIf="!bookingService.selectedTimeSlot && !bookingService.isCancelling;">
+  <div class="row" >
+  <div  *ngFor="let day of timeSlots" class="card">
+      <h2>{{day.day}}</h2>
+      <div *ngFor="let time of day.slots">
+        <div *ngIf="time.available" (click)="bookingService.selectTimeSlot(time)">{{time.label}}</div>
+      </div>
   </div>
+  </div>
+    <button (click)="bookingService.selectCancellation(true)">Avboka</button>
+  </div>
+  <div class="col" *ngIf="bookingService.isCancelling;">
+    <app-cancel-booking></app-cancel-booking>
+  </div>
+  <div class="col" *ngIf="bookingService.selectedTimeSlot;">
+    <app-booking-form></app-booking-form>
+  </div>
+
 
 
 </div>
