@@ -1,0 +1,10 @@
+.booking-form {
+  background-color: #9adcef;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  text-align: left;
+  padding-left: 1rem;
+  margin: 0;
+}
+

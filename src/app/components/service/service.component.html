@@ -138,7 +138,7 @@
 </div>
 
 <ng-template #elseBlock>
-  <button (click)="setService('')" class="service-back-button"> <= Go back</button>
+  <button (click)="setService('')" class="service-back-button"> <i class="material-icons">backspace</i> Go back</button>
   <div [ngSwitch]="openService" class="service-article">
     <!-- 1/1-->
     <div *ngSwitchCase="'gastro'">

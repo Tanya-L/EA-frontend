@@ -14,10 +14,13 @@ import { JwSocialButtonsModule } from 'jw-angular-social-buttons';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { ServiceComponent } from './components/service/service.component';
 import { ExtraServiceComponent } from './components/extra-service/extra-service.component';
-import { BookingComponent } from './booking/booking.component';
+import { BookingComponent } from './bookingFlow/booking/booking.component';
 import { AdminComponent } from './adminFlow/admin/admin.component';
-import { BookCalendarComponent } from './book-calendar/book-calendar.component';
+import { BookCalendarComponent } from './bookingFlow/book-calendar/book-calendar.component';
 import { LoginComponent } from './adminFlow/login/login.component';
+import { BookingFormComponent } from './bookingFlow/booking-form/booking-form.component';
+import { CancelBookingComponent } from './bookingFlow/cancel-booking/cancel-booking.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -34,13 +37,16 @@ import { LoginComponent } from './adminFlow/login/login.component';
     BookingComponent,
     AdminComponent,
     BookCalendarComponent,
-    LoginComponent
+    LoginComponent,
+    BookingFormComponent,
+    CancelBookingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    JwSocialButtonsModule
+    JwSocialButtonsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

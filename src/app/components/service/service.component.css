@@ -20,9 +20,6 @@
   max-width: 15%;
 }
 
-.btn-light {
-  outline: #24292e;
-}
 .service-back-button{
   position: absolute;
   z-index: 1;
@@ -30,7 +27,7 @@
   left: 2em;
   background: transparent;
   border: none;
-  font-size: 19px;
+  font-size: 20px;
 
 }
 .service-article{

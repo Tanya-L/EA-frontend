@@ -1,0 +1,36 @@
+<form class="booking-form">
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input id="FirstName" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input id="LastName" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="email">E-post*</label>
+    <input required id="email" type="email" name="email" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="telephone">Telefon*</label>
+    <input required id="telephone" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="service">Behandlingar*</label>
+    <select required class="form-control" id="service" >
+      <option>...</option>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="comment">Comment</label>
+    <textarea id="comment" cols='15' rows="5" class="form-control">
+    </textarea>
+  </div>
+  <button class="btn btn-success">Boka tid</button>
+</form>

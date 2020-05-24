@@ -6,8 +6,8 @@ import {ContactComponent} from './components/contact/contact.component';
 import {OmOssComponent} from './components/om-oss/om-oss.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {ServiceComponent} from './components/service/service.component';
-import {BookingComponent} from './booking/booking.component';
-import {BookCalendarComponent} from './book-calendar/book-calendar.component';
+import {BookingComponent} from './bookingFlow/booking/booking.component';
+import {BookCalendarComponent} from './bookingFlow/book-calendar/book-calendar.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full' },
