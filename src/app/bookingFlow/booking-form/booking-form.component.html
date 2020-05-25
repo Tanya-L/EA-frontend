@@ -1,34 +1,41 @@
-<form class="booking-form">
+<form class="booking-form was-validated">
   <div class="form-group">
     <label for="firstName">First Name</label>
-    <input id="FirstName" type="text" class="form-control">
+    <input id="firstName" type="text" class="form-control" name="firstName" required>
+    <div class="valid-feedback">Valid</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+
   </div>
   <div class="form-group">
     <label for="lastName">Last Name</label>
-    <input id="LastName" type="text" class="form-control">
+    <input id="lastName" type="text" class="form-control" name="lastName" required>
+    <div class="valid-feedback">Valid</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
   </div>
+
   <div class="form-group">
-    <label for="email">E-post*</label>
-    <input required id="email" type="email" name="email" class="form-control">
+    <label for="email">E-post:</label>
+    <input id="email" type="email" class="form-control" placeholder="e-post" required>
     <small id="emailHelpBlock" class="form-text text-muted">
       Booking number send to your email
     </small>
+    <div class="alert alert-danger" *ngIf="email.touched && !email.valid">E-mail is required</div>
   </div>
   <div class="form-group">
-    <label for="telephone">Telefon*</label>
-    <input required id="telephone" type="text" class="form-control">
+    <label for="telephone">Telefon</label>
+    <input name="telephone" id="telephone" type="text" class="form-control">
   </div>
-  <div class="form-group">
-    <label for="service">Besöksorsak*</label>
-    <select class="form-control" id="service" >
-      <option>  .......</option>
-      <option>Allmänt veterinärbesök Katt/Hund</option>
-      <option>Vaccination Katt/Hund/Kanin</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
+  <!--  <div class="form-group">-->
+  <!--    <label for="service">Besöksorsak*</label>-->
+  <!--    <select class="form-control" id="service" >-->
+  <!--      <option>  .......</option>-->
+  <!--      <option>Allmänt veterinärbesök Katt/Hund</option>-->
+  <!--      <option>Vaccination Katt/Hund/Kanin</option>-->
+  <!--      <option>3</option>-->
+  <!--      <option>4</option>-->
+  <!--      <option>5</option>-->
+  <!--    </select>-->
+  <!--  </div>-->
 
   <div class="form-group">
     <label for="comment">Comment</label>
@@ -36,6 +43,9 @@
     </textarea>
   </div>
 
-  <button type="cancel" class="btn btn-cancel" (click)="bookingService.selectTimeSlot(null)" >Avbryt</button>
+  <div class="form-button">
+  <button type="reset" class="btn btn-reset" (click)="bookingService.selectTimeSlot(null)">Go to calendar</button>
+
   <button type="submit" class="btn btn-success">Boka tid</button>
+  </div>
 </form>

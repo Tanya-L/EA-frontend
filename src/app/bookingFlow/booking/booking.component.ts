@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import * as Phone from '../../components/contact/assets/headphones.png';
-import moment from "moment";
+import moment from 'moment';
 import BookingService from './booking.service';
 import {bookedData} from '../bookingdata';
 
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.component.html',
-  styleUrls: ['./booking.component.css', '../../components/contact/contact.component.css']
+  styleUrls: ['./booking.component.css']
   })
 export class BookingComponent implements OnInit {
   public phone: string = Phone.default;

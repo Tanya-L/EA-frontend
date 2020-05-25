@@ -19,7 +19,7 @@ import { AdminComponent } from './adminFlow/admin/admin.component';
 import { LoginComponent } from './adminFlow/login/login.component';
 import { BookingFormComponent } from './bookingFlow/booking-form/booking-form.component';
 import { CancelBookingComponent } from './bookingFlow/cancel-booking/cancel-booking.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [

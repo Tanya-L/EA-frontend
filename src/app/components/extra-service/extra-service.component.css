@@ -1,8 +1,8 @@
 .card {
   align-items: center;
   margin: 10px;
-  flex: 0 0 calc(24%);
-  max-width: 24%;
+  flex: 0 0 calc(23% - 10px);
+  max-width: 23%;
   padding: 30px 10px 20px;
 }
 

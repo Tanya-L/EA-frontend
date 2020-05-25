@@ -16,7 +16,7 @@
 
 
   <div *ngIf="!bookingService.selectedTimeSlot && !bookingService.isCancelling;">
-  <div class="row" >
+  <div class="row justify-content-evenly" >
   <div  *ngFor="let day of timeSlots" class="card">
       <h2>{{day.day}}</h2>
       <div *ngFor="let time of day.slots">
