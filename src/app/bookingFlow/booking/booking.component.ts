@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Phone from '../../components/contact/assets/headphones.png';
+// @ts-ignore
 import moment from 'moment';
 import BookingService from './booking.service';
 import {bookedData} from '../bookingdata';

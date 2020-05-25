@@ -19,3 +19,7 @@ span {
 .card-text {
   font-size: large;
 }
+
+.tel {
+  color: red;
+}
