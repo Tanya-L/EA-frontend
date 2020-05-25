@@ -32,8 +32,8 @@ ul {
   text-align: center;
 }
 
-.card-text {
-  font-size: large;
+.card-text, li, time {
+  font-size: 1.2rem;
 }
 
 .card-img-top {

@@ -1,11 +1,19 @@
 .book {
   background-color: #9adcef;
-  padding: 15px;
+  padding: 2rem 10% 15px 10%;
   text-align: center;
+}
+
+div.skip-line {
+  margin-bottom: 1.5rem;
 }
 
 span {
   font-weight: bold;
+}
+
+div.weekday {
+  font-size: 1.5em;
 }
 
 .calendar {
@@ -20,7 +28,7 @@ span {
 }
 
 .card-text {
-  font-size: large;
+  font-size: 1em;
 }
 
 .tel {
@@ -32,6 +40,8 @@ span {
   margin: .5rem;
   border-radius: 8px;
   padding: .5rem;
+  width: 50%;
+  font-size: 1.5em;
 }
 
 .slot-booked {
@@ -39,8 +49,13 @@ span {
   margin: .5rem;
   border-radius: 8px;
   padding: .5rem;
+  width: 50%;
+  text-decoration: line-through;
+  font-size: 1em;
 }
 
 .cweek {
-  font-size: large;
+  font-size: 1.5em;
+  font-weight: bold;
+  align-items: baseline;
 }

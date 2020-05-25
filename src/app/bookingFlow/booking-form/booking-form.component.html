@@ -1,23 +1,12 @@
 <form class="booking-form was-validated">
   <div class="form-group">
-    <label for="firstName">First Name</label>
+    <label for="name">Your Name</label>
     <input
-      id="firstName"
+      id="name"
       type="text"
       class="form-control"
-      name="firstName"
-      required>
-    <div class="valid-feedback">Valid</div>
-    <div class="invalid-feedback">Please fill out this field.</div>
-
-  </div>
-  <div class="form-group">
-    <label for="lastName">Last Name</label>
-    <input
-      id="lastName"
-      type="text"
-      class="form-control"
-      name="lastName"
+      name="name"
+      [(ngModel)]="formModel.name"
       required>
     <div class="valid-feedback">Valid</div>
     <div class="invalid-feedback">Please fill out this field.</div>
@@ -25,19 +14,20 @@
 
   <div class="form-group">
     <label for="email">E-post:</label>
-    <input
-      id="email"
-      type="email"
-      class="form-control"
-      placeholder="e-post"
-      required>
-    <small id="emailHelpBlock" class="form-text text-muted">
-      Booking number send to your email
-    </small>
-    <div class="alert alert-danger"
-         *ngIf="email.touched && !email.valid">
-      E-mail is required
-    </div>
+    <input id="email"
+           name="email"
+           type="email"
+           class="form-control"
+           placeholder="name@example.com"
+           [(ngModel)]="formModel.email"
+           pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+           #email="ngModel"
+           [class.is-invalid]="email.invalid && email.touched"
+           required>
+    <!--            <div class="alert alert-danger"-->
+    <!--                 *ngIf="emailInput.touched && !emailInput.valid">-->
+    <!--              E-mail is required-->
+    <!--            </div>-->
   </div>
   <div class="form-group">
     <label for="telephone">Telefon</label>
@@ -70,16 +60,16 @@
   </div>
 
   <div class="form-button">
-  <button type="reset"
-          class="btn btn-reset"
-          (click)="bookingService.selectTimeSlot(null)">
-    Go to calendar
-  </button>
+    <button type="reset"
+            class="btn btn-reset"
+            (click)="bookingService.selectTimeSlot(null)">
+      Go to calendar
+    </button>
 
-  <button type="submit"
-          class="btn btn-success"
-          [routerLink]="['/booking-thanks']">
-    Boka tid
-  </button>
+    <button type="submit"
+            class="btn btn-success"
+            [routerLink]="['/booking-thanks']">
+      Boka tid
+    </button>
   </div>
 </form>

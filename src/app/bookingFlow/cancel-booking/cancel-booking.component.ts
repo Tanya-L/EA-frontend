@@ -1,5 +1,6 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import BookingService from '../booking/booking.service';
+import {UnbookFormData} from '../unbook-form-data';
 
 @Component({
   selector: 'app-cancel-booking',
@@ -7,8 +8,7 @@ import BookingService from '../booking/booking.service';
   styleUrls: ['./cancel-booking.component.css']
 })
 export class CancelBookingComponent implements OnInit {
-  @ViewChild('#email') emailInput: ElementRef;
-  email: string;
+  formModel: UnbookFormData = new UnbookFormData('', '');
 
   constructor(private bookingService: BookingService) { }
 

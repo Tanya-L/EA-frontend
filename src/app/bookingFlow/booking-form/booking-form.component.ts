@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import BookingService from '../booking/booking.service';
+import {BookingFormData} from '../booking-form-data';
 
 
 @Component({
@@ -8,7 +9,7 @@ import BookingService from '../booking/booking.service';
   styleUrls: ['./booking-form.component.css']
 })
 export class BookingFormComponent implements OnInit {
-  email: string;
+  formModel: BookingFormData = new BookingFormData('', '', '', '');
 
   constructor(private bookingService: BookingService) { }
 

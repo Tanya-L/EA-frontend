@@ -7,22 +7,33 @@
         <div class="col">
           <div class="form-group">
             <label for="email">E-post:</label>
-            <input
-              id="email"
-              type="email"
-              class="form-control"
-              placeholder="name@example.com"
-              required>
-            <div class="alert alert-danger"
-                 *ngIf="emailInput.touched && !emailInput.valid">
-              E-mail is required
-            </div>
+            <input id="email"
+                   name="email"
+                   type="email"
+                   class="form-control"
+                   placeholder="name@example.com"
+                   [(ngModel)]="formModel.email"
+                   pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                   #email="ngModel"
+                   [class.is-invalid]="email.invalid && email.touched"
+                   required>
+            <!--            <div class="alert alert-danger"-->
+            <!--                 *ngIf="emailInput.touched && !emailInput.valid">-->
+            <!--              E-mail is required-->
+            <!--            </div>-->
           </div>
         </div>
         <div class="col">
           <div class="form-group">
-            <label for="cancel">Booking kod</label>
-            <input type="text" id="cancel" class="form-control"></div>
+            <label for="bookingCode">Booking code</label>
+            <input type="text"
+                   id="bookingCode"
+                   name="bookingCode"
+                   class="form-control"
+                   [(ngModel)]="formModel.bookingCode"
+                   #bookingCode="ngModel"
+                   [class.is-invalid]="bookingCode.invalid && bookingCode.touched">
+          </div>
         </div>
       </div>
     </div>

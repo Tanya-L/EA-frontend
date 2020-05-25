@@ -6,7 +6,7 @@
 /*}*/
 
 .service {
-  font-size: 18px;
+  font-size: 1.5rem;
   text-align: center;
   padding: 15px;
   background-color: #9adcef;
@@ -27,7 +27,7 @@
   left: 2em;
   background: transparent;
   border: none;
-  font-size: 20px;
+  font-size: 1.5rem;
   border-radius: 5px;
   color: black;
 
@@ -60,8 +60,8 @@
   z-index: 1;
 }
 
-.service-article-layout p{
-  font-size: 18px;
+.service-article-layout p {
+  font-size: 1.5rem;
   text-align: left;
   margin: 0;
 }
