@@ -20,6 +20,8 @@ import { LoginComponent } from './adminFlow/login/login.component';
 import { BookingFormComponent } from './bookingFlow/booking-form/booking-form.component';
 import { CancelBookingComponent } from './bookingFlow/cancel-booking/cancel-booking.component';
 import {FormsModule} from '@angular/forms';
+import { BookingThanksComponent } from './bookingFlow/booking-thanks/booking-thanks.component';
+import { CancelThanksComponent } from './bookingFlow/cancel-thanks/cancel-thanks.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import {FormsModule} from '@angular/forms';
     AdminComponent,
     LoginComponent,
     BookingFormComponent,
-    CancelBookingComponent
+    CancelBookingComponent,
+    BookingThanksComponent,
+    CancelThanksComponent
   ],
   imports: [
     BrowserModule,

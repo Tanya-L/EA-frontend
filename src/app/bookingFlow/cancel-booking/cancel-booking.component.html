@@ -13,10 +13,10 @@
               class="form-control"
               placeholder="name@example.com"
               required>
-            <div class="alert alert-danger"
-                 *ngIf="email.touched && !email.valid">
-              E-mail is required
-            </div>
+<!--            <div class="alert alert-danger"-->
+<!--                 *ngIf="email.touched && !email.valid">-->
+<!--              E-mail is required-->
+<!--            </div>-->
           </div>
         </div>
         <div class="col">
@@ -30,7 +30,7 @@
     <div class="form-button">
       <!--      что делает эта кнопка? -->
       <!--      <button (click)="bookingService.selectCancellation(false)">Cancel</button>-->
-      <button type="submit" class="btn btn-danger">AVBOKA</button>
+      <button type="submit" class="btn btn-danger" [routerLink]="['/cancel-thanks']">AVBOKA</button>
     </div>
   </div>
 </form>
