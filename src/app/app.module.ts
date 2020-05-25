@@ -22,6 +22,7 @@ import {CancelBookingComponent} from './bookingFlow/cancel-booking/cancel-bookin
 import {FormsModule} from '@angular/forms';
 import {BookingThanksComponent} from './bookingFlow/booking-thanks/booking-thanks.component';
 import {CancelThanksComponent} from './bookingFlow/cancel-thanks/cancel-thanks.component';
+import { AdminBookingComponent } from './adminFlow/admin-booking/admin-booking.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import {CancelThanksComponent} from './bookingFlow/cancel-thanks/cancel-thanks.c
     BookingFormComponent,
     CancelBookingComponent,
     BookingThanksComponent,
-    CancelThanksComponent
+    CancelThanksComponent,
+    AdminBookingComponent
   ],
   imports: [
     BrowserModule,

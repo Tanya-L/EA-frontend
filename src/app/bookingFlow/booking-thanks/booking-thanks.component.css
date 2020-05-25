@@ -1,0 +1,21 @@
+.booking-thanks {
+  background-color: #9adcef;
+  padding: 2rem 10% 15px 10%;
+  text-align: center;
+}
+
+div.skip-line {
+  margin-bottom: 1.5rem;
+}
+
+span {
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1em;
+}
+
+.tel {
+  color: red;
+}
