@@ -8,6 +8,7 @@ import BookingService from '../booking/booking.service';
   styleUrls: ['./booking-form.component.css']
 })
 export class BookingFormComponent implements OnInit {
+  email: string;
 
   constructor(private bookingService: BookingService) { }
 

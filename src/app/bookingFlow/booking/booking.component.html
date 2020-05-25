@@ -16,17 +16,47 @@
     </div>
   </div>
 
+  <!--calendar-->
+
+  <div class="row">
+    <button class="col" *ngIf="selectedWeek > currentWeek" (click)="onPrevWeekClick()">
+      <i class="material-icons">navigate_before</i>
+      <i class="material-icons">navigate_before</i>
+      Last week
+    </button>
+    <div class="col" *ngIf="selectedWeek <= currentWeek">
+      <s>Last week</s>
+    </div>
+    <div class="col">
+      <div class="cweek">Week {{currentWeek}} of the year</div>
+    </div>
+    <button class="col" *ngIf="selectedWeek < currentWeek + 3" (click)="onNextWeekClick()">
+      Next week
+      <i class="material-icons">navigate_next</i>
+      <i class="material-icons">navigate_next</i>
+    </button>
+    <div class="col" *ngIf="selectedWeek >= currentWeek + 3">
+      <s>Next week</s>
+    </div>
+  </div>
+
+  <!--  current week-->
 
   <div *ngIf="!bookingService.selectedTimeSlot && !bookingService.isCancelling;">
     <div class="row justify-content-evenly">
-      <div *ngFor="let day of timeSlots" class="card">
+      <div *ngFor="let day of timeSlots" class="calendar">
         <h2>{{day.day}}</h2>
         <div *ngFor="let time of day.slots">
-          <div *ngIf="time.available" (click)="bookingService.selectTimeSlot(time)">{{time.label}}</div>
+          <div *ngIf="time.available" (click)="bookingService.selectTimeSlot(time)">
+            <button class="slot">{{time.label}}</button>
+          </div>
+          <div *ngIf="!time.available">
+            <button class="slot-booked">{{time.label}}</button>
+          </div>
         </div>
       </div>
     </div>
-<!--    <button (click)="bookingService.selectCancellation(true)">Avboka</button>-->
+    <!--    <button (click)="bookingService.selectCancellation(true)">Avboka</button>-->
   </div>
   <div class="col" *ngIf="bookingService.isCancelling;">
     <app-cancel-booking></app-cancel-booking>

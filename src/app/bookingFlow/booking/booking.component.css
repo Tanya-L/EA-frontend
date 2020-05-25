@@ -8,12 +8,15 @@ span {
   font-weight: bold;
 }
 
-.card {
+.calendar {
   align-items: center;
   margin: 10px;
   flex: 0 0 calc(20% - 20px);
   max-width: 20%;
-  /*padding: 30px 10px 20px;*/
+  padding: 30px 10px 20px;
+  background-color: white;
+  border-color: #888888;
+  border-radius: 5px;
 }
 
 .card-text {
@@ -22,4 +25,22 @@ span {
 
 .tel {
   color: red;
+}
+
+.slot {
+  color: green;
+  margin: .5rem;
+  border-radius: 8px;
+  padding: .5rem;
+}
+
+.slot-booked {
+  color: red;
+  margin: .5rem;
+  border-radius: 8px;
+  padding: .5rem;
+}
+
+.cweek {
+  font-size: large;
 }

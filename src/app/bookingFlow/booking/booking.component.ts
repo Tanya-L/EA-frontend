@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import * as Phone from '../../components/contact/assets/headphones.png';
 // @ts-ignore
 import moment from 'moment';
@@ -9,49 +9,49 @@ import {bookedData} from '../bookingdata';
   selector: 'app-booking',
   templateUrl: './booking.component.html',
   styleUrls: ['./booking.component.css']
-  })
+})
 export class BookingComponent implements OnInit {
   public phone: string = Phone.default;
 
   public timeSlots: object = [];
+  slots: any;
+  currentWeek: number;
+  selectedWeek: number;
 
   constructor(private bookingService: BookingService) {
   }
 
   ngOnInit() {
-    let startDay = moment();
-    if ( startDay.day() === 6 ) {
-      startDay = startDay.add(1, 'days');
-    }
-    this.timeSlots = this.getDays(startDay);
+    this.currentWeek = this.selectedWeek = moment().week();
+    this.updateWeekView();
   }
 
   getDays(thisDay) {
-
+    const format = 'dddd, DD MMM';
     return [
       {
         //  Monday
-        day: thisDay.day(1).format('DD MMM'),
+        day: thisDay.day(1).format(format),
         slots: this.getTimes(thisDay.day(1))
       },
       {
         //  Tuesday
-        day: thisDay.day(2).format('DD MMM'),
+        day: thisDay.day(2).format(format),
         slots: this.getTimes(thisDay.day(2))
       },
       {
         //  Wednesday
-        day: thisDay.day(3).format('DD MMM'),
+        day: thisDay.day(3).format(format),
         slots: this.getTimes(thisDay.day(3))
       },
       {
         //  Thursday
-        day: thisDay.day(4).format('DD MMM'),
+        day: thisDay.day(4).format(format),
         slots: this.getTimes(thisDay.day(4))
       },
       {
         //  Friday
-        day: thisDay.day(5).format('DD MMM'),
+        day: thisDay.day(5).format(format),
         slots: this.getTimes(thisDay.day(5))
       },
     ];
@@ -69,9 +69,12 @@ export class BookingComponent implements OnInit {
       this.getTimeSlot(day.hour(15).minutes(0)),
       this.getTimeSlot(day.hour(16).minutes(0)),
     ];
-    if ( day.day() === 1 || day.day() === 3) {
+    if (day.day() === 1 || day.day() === 3) {
       slots = [...slots,
         this.getTimeSlot(day.hour(17).minutes(0)),
+        this.getTimeSlot(day.hour(18).minutes(0)),
+        this.getTimeSlot(day.hour(19).minutes(0)),
+        this.getTimeSlot(day.hour(20).minutes(0)),
       ];
     }
     return slots;
@@ -88,7 +91,26 @@ export class BookingComponent implements OnInit {
 
   }
 
+
   isTimeAvailable(time) {
-    return time.isAfter(moment()) && !bookedData[time.format('YYYY-MM-DDTHH:mm')] ;
+    return time.isAfter(moment()) && !bookedData[time.format('YYYY-MM-DDTHH:mm')];
+  }
+
+  onPrevWeekClick() {
+    this.selectedWeek = Math.max(this.currentWeek, this.selectedWeek - 1);
+    this.updateWeekView();
+  }
+
+  onNextWeekClick() {
+    this.selectedWeek = Math.min(this.currentWeek + 3, this.selectedWeek + 1);
+    this.updateWeekView();
+  }
+
+  private updateWeekView() {
+    let startDay = moment().week(this.selectedWeek);
+    if (startDay.day() === 6) {
+      startDay = startDay.add(1, 'days');
+    }
+    this.timeSlots = this.getDays(startDay);
   }
 }
