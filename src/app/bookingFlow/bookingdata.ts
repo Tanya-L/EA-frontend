@@ -8,5 +8,15 @@ export const bookedData = {
     id: 1,
     date: '2020-05-28T08:00:00+02:00',
     booked: true,
+  },
+  '2020-06-03T08:00': {
+    id: 1,
+    date: '2020-06-03T08:00:00+02:00',
+    booked: true,
+  },
+  '2020-06-05T15:00': {
+    id: 1,
+    date: '2020-06-05T15:00:00+02:00',
+    booked: true,
   }
 };

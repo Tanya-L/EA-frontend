@@ -23,7 +23,7 @@
       <div class="card-body text-center">
         <h4 class="card-title">Bronkoskopi</h4>
         <p class="card-text"></p>
-        <a (click)="setService('bronko')" class="btn btn-light">Läs mer</a>
+        <a (click)="setService('bronko')" class="btn btn-info">Läs mer</a>
       </div>
     </div>
 
@@ -34,7 +34,7 @@
       <div class="card-body text-center">
         <h4 class="card-title">Kardiologi</h4>
         <p class="card-text"></p>
-        <a (click)="setService('kardio')" class="btn btn-light">Läs mer</a>
+        <a (click)="setService('kardio')" class="btn btn-info">Läs mer</a>
       </div>
     </div>
 
@@ -45,7 +45,7 @@
       <div class="card-body text-center">
         <h4 class="card-title">Ultraljud buk och hjärta</h4>
         <p class="card-text"></p>
-        <a (click)="setService('monitor')" class="btn btn-light">Läs mer</a>
+        <a (click)="setService('monitor')" class="btn btn-info">Läs mer</a>
       </div>
     </div>
 
@@ -66,7 +66,7 @@
       <div class="card-body text-center">
         <h4 class="card-title">Blodprovstagning och diagnostik på plats</h4>
         <p class="card-text"></p>
-        <a (click)="setService('blood')" class="btn btn-light">Läs mer</a>
+        <a (click)="setService('blood')" class="btn btn-info">Läs mer</a>
       </div>
     </div>
   </div>
@@ -80,7 +80,7 @@
       <div class="card-body text-center">
         <h4 class="card-title">Sövning av patienter med hjärtproblem</h4>
         <p class="card-text"></p>
-        <a (click)="setService('ekg')" class="btn btn-light">Läs mer</a>
+        <a (click)="setService('ekg')" class="btn btn-info">Läs mer</a>
       </div>
     </div>
 
@@ -91,7 +91,7 @@
       <div class="card-body text-center">
         <h4 class="card-title">Tandvård</h4>
         <p class="card-text"></p>
-        <a (click)="setService('molar')" class="btn btn-light">Läs mer</a>
+        <a (click)="setService('molar')" class="btn btn-info">Läs mer</a>
       </div>
     </div>
 
@@ -102,7 +102,7 @@
       <div class="card-body text-center">
         <h4 class="card-title">Vaccinationer, besiktning</h4>
         <p class="card-text"></p>
-        <a (click)="setService('syringe')" class="btn btn-light">Läs mer</a>
+        <a (click)="setService('syringe')" class="btn btn-info">Läs mer</a>
       </div>
     </div>
 
@@ -113,7 +113,7 @@
       <div class="card-body text-center">
         <h4 class="card-title">Dialys</h4>
         <p class="card-text"></p>
-        <a (click)="setService('dialys')" class="btn btn-light">Läs mer</a>
+        <a (click)="setService('dialys')" class="btn btn-info">Läs mer</a>
       </div>
     </div>
     <!-- 5 card -->
@@ -138,7 +138,10 @@
 </div>
 
 <ng-template #elseBlock>
-  <button (click)="setService('')" class="service-back-button"> <i class="material-icons">backspace</i> Go back</button>
+  <div class="service-back-button">
+    <button (click)="setService('')" class="btn-info">
+      <i class="material-icons">backspace</i> Go back</button>
+  </div>
   <div [ngSwitch]="openService" class="service-article">
     <!-- 1/1-->
     <div *ngSwitchCase="'gastro'">

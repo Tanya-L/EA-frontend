@@ -52,26 +52,11 @@ a:hover {
   opacity: 0.8;
 }
 
-
-/* Nav Bar */
-
-/*app-nav-bar {*/
-/*  margin: 0;*/
-/*  width: 100%;*/
-/*  height: 100%;*/
-/*  display: flex;*/
-/*  flex-direction: row;*/
-/*  justify-content: space-between;*/
-/*  align-items: flex-end;*/
-/*}*/
-
-/*app-nav-bar h1 {*/
-/*  color: black;*/
-/*  margin: 0;*/
-/*  justify-items: center;*/
-/*  position: relative;*/
-/*}*/
-
+/* for card */
 .justify-content-evenly{
   justify-content: space-evenly;
+}
+
+.btn-secondary {
+  border-color: #24292e;
 }

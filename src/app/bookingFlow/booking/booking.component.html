@@ -11,14 +11,15 @@
         <p class="card-text tel">070 095-48-84</p>
       </div>
     </div>
-    <div class="col">
+    <div class="col" *ngIf="!bookingService.selectedTimeSlot && !bookingService.isCancelling">
       <app-cancel-booking></app-cancel-booking>
     </div>
   </div>
 
   <!--calendar-->
 
-  <div class="row">
+  <div *ngIf="!bookingService.selectedTimeSlot && !bookingService.isCancelling">
+    <div class="row">
     <button class="col" *ngIf="selectedWeek > currentWeek" (click)="onPrevWeekClick()">
       <i class="material-icons">navigate_before</i>
       <i class="material-icons">navigate_before</i>
@@ -42,7 +43,6 @@
 
   <!--  current week-->
 
-  <div *ngIf="!bookingService.selectedTimeSlot && !bookingService.isCancelling;">
     <div class="row justify-content-evenly">
       <div *ngFor="let day of timeSlots" class="calendar">
         <h2>{{day.day}}</h2>
