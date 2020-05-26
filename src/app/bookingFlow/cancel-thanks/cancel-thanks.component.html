@@ -1,3 +1,28 @@
-<p>
-  cancel-thanks works!
-</p>
+<app-nav-bar></app-nav-bar>
+<div class="cancel-thanks">
+  <h1>Tack för din AVbokning!</h1>
+  <br>
+  <div class="row skip-line">
+    <div class="col">
+      <p>Alltid välkommen hos oss på Kunsängens Veterinär klinik</p>
+      <p>Det går också bra att ringa oss för <span>bokning</span> eller om du har frågor.</p>
+      <div class="row"
+           style="justify-content: center; align-items: center">
+        <img class="card-img-top" [src]="phone"
+             alt="telephone" style="width: 45px">
+        <p class="card-text tel">070 095-48-84</p>
+      </div>
+    </div>
+    <div class="col-md-4 card ">
+      <i class="material-icons">event</i>
+      <div class="card-body text-center">
+        <h4 class="card-title">Boka tid:</h4>
+        <p class="card-text">
+          Se lediga tjanster och boka tid
+        </p>
+        <a class="btn btn-info" [routerLink]="['/booking']">Ga till bokning</a>
+      </div>
+    </div>
+  </div>
+</div>
+
