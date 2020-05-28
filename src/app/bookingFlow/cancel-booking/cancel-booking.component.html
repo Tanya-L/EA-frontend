@@ -1,6 +1,9 @@
-<form class="cancel-form was-validated">
+<form class="cancel-form was-validated" (ngSubmit)="onCancel($event)">
   <div class="cancel card">
     <div class="form-group">
+      <div *ngIf="isCancelError">
+        <h1>ERROR!!!</h1>
+      </div>
       <h3>Vill du <span>AVBOKA</span> tid hos oss? </h3>
       <p> Booking kod was sended to your email</p>
       <div class="row">
@@ -40,8 +43,7 @@
 
     <div class="form-button">
       <!--      что делает эта кнопка? -->
-      <!--      <button (click)="bookingService.selectCancellation(false)">Cancel</button>-->
-      <button type="submit" class="btn btn-danger" [routerLink]="['/cancel-thanks']">AVBOKA</button>
+       <button type="submit" class="btn btn-danger">AVBOKA</button>
     </div>
   </div>
 </form>

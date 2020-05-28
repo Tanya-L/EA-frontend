@@ -1,0 +1,49 @@
+.admin-calendar {
+  background-color: #9adcef;
+  padding: 2rem 10% 15px 10%;
+  text-align: center;
+}
+
+span {
+  font-weight: bold;
+}
+
+div.weekday {
+  font-size: 1.0em;
+}
+
+.calendar {
+  align-items: center;
+  margin: 10px;
+  flex: 0 0 calc(20% - 20px);
+  max-width: 20%;
+  padding: 30px 10px 20px;
+  background-color: white;
+  border-color: #888888;
+  border-radius: 5px;
+}
+
+.slot {
+  color: green;
+  margin: .5rem;
+  border-radius: 8px;
+  padding: .5rem;
+  width: 50%;
+  font-size: 1.5em;
+}
+
+.slot-booked {
+  color: red;
+  margin: .5rem;
+  border-radius: 8px;
+  padding: .5rem;
+  width: 50%;
+  text-decoration: line-through;
+  font-size: 1em;
+}
+
+.cweek {
+  font-size: 1.5em;
+  font-weight: bold;
+  align-items: baseline;
+}

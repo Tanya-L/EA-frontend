@@ -11,35 +11,36 @@
         <p class="card-text tel">070 095-48-84</p>
       </div>
     </div>
-    <div class="col" *ngIf="!bookingService.selectedTimeSlot && !bookingService.isCancelling">
+    <div class="col" *ngIf="!bookingService.selectedTimeSlot">
       <app-cancel-booking></app-cancel-booking>
     </div>
   </div>
 
   <!--calendar-->
 
-  <div *ngIf="!bookingService.selectedTimeSlot && !bookingService.isCancelling">
+  <div *ngIf="!bookingService.selectedTimeSlot">
     <div class="row">
-    <div class="col cweek" *ngIf="selectedWeek > currentWeek" (click)="onPrevWeekClick()">
-      <i class="material-icons">arrow_back</i>
-      Last week
-    </div>
-    <div class="col" *ngIf="selectedWeek <= currentWeek">
-      <s>Last week</s>
-    </div>
-    <div class="col">
-      <div class="cweek">Week {{currentWeek}} </div>
-    </div>
-    <div class="col cweek" *ngIf="selectedWeek < currentWeek + 3" (click)="onNextWeekClick()">
-      Next week
-      <i class="material-icons">arrow_forward</i>
-    </div>
-    <div class="col" *ngIf="selectedWeek >= currentWeek + 3">
-      <s>Next week</s>
-    </div>
-  </div>
+      <div class="col cweek" *ngIf="selectedWeek > currentWeek" (click)="onPrevWeekClick()">
+        <i class="material-icons">arrow_back</i>
+        Last week
+      </div>
+      <div class="col" *ngIf="selectedWeek <= currentWeek">
+        <s>Last week</s>
+      </div>
+      <div class="col">
 
-  <!--  current week-->
+        <div class="cweek">Week {{selectedWeek}} </div>
+      </div>
+      <div class="col cweek" *ngIf="selectedWeek < currentWeek + 3" (click)="onNextWeekClick()">
+        Next week
+        <i class="material-icons">arrow_forward</i>
+      </div>
+      <div class="col" *ngIf="selectedWeek >= currentWeek + 3">
+        <s>Next week</s>
+      </div>
+    </div>
+
+    <!--  current week-->
 
     <div class="row justify-content-evenly">
       <div *ngFor="let day of timeSlots" class="calendar">
@@ -54,11 +55,7 @@
         </div>
       </div>
     </div>
-    <!--    <button (click)="bookingService.selectCancellation(true)">Avboka</button>-->
-  </div>
-  <div class="col" *ngIf="bookingService.isCancelling;">
-    <app-cancel-booking></app-cancel-booking>
-  </div>
+   </div>
   <div class="col" *ngIf="bookingService.selectedTimeSlot;">
     <app-booking-form></app-booking-form>
   </div>

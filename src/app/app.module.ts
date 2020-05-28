@@ -22,7 +22,7 @@ import {CancelBookingComponent} from './bookingFlow/cancel-booking/cancel-bookin
 import {FormsModule} from '@angular/forms';
 import {BookingThanksComponent} from './bookingFlow/booking-thanks/booking-thanks.component';
 import {CancelThanksComponent} from './bookingFlow/cancel-thanks/cancel-thanks.component';
-import { AdminBookingComponent } from './adminFlow/admin-booking/admin-booking.component';
+import { AdminCalendarComponent } from './adminFlow/admin-calendar/admin-calendar.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,7 @@ import { AdminBookingComponent } from './adminFlow/admin-booking/admin-booking.c
     CancelBookingComponent,
     BookingThanksComponent,
     CancelThanksComponent,
-    AdminBookingComponent
+    AdminCalendarComponent
   ],
   imports: [
     BrowserModule,

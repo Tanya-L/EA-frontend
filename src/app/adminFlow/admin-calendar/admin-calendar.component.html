@@ -1,0 +1,46 @@
+<app-nav-bar></app-nav-bar>
+<!--admin calendar-->
+
+
+<div class="admin-calendar">
+  <h1>Welcome admin</h1>
+<div *ngIf="!bookingService.selectedTimeSlot && !bookingService.isCancelling">
+  <div class="row">
+    <div class="col cweek" *ngIf="selectedWeek > currentWeek" (click)="onPrevWeekClick()">
+      <i class="material-icons">arrow_back</i>
+      Last week
+    </div>
+    <div class="col" *ngIf="selectedWeek <= currentWeek">
+      <s>Last week</s>
+    </div>
+    <!--      TODO сделать чтобы при переходе на другие недели эта переменная менялась-->
+    <div class="col" *ngIf="selectedWeek == currentWeek">
+
+      <div class="cweek">Week {{currentWeek}} </div>
+    </div>
+    <div class="col cweek" *ngIf="selectedWeek < currentWeek + 3" (click)="onNextWeekClick()">
+      Next week
+      <i class="material-icons">arrow_forward</i>
+    </div>
+    <div class="col" *ngIf="selectedWeek >= currentWeek + 3">
+      <s>Next week</s>
+    </div>
+  </div>
+
+  <!--  current week-->
+
+  <div class="row justify-content-evenly">
+    <div *ngFor="let day of timeSlots" class="calendar">
+      <div class="weekday">{{day.day}}</div>
+      <div *ngFor="let time of day.slots">
+        <div *ngIf="time.available" (click)="bookingService.selectTimeSlot(time)">
+          <button class="slot">{{time.label}}</button>
+        </div>
+        <div *ngIf="!time.available">
+          <button class="slot-booked">{{time.label}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ </div>
+</div>
