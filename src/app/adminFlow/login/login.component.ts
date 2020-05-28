@@ -1,5 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {LoginFormData} from '../login-form-data';
+import {CookieService} from 'ngx-cookie-service';
+import {Router} from '@angular/router';
+
+interface LoginResult {
+  result: boolean;
+  token?: string;
+}
 
 @Component({
   selector: 'app-login',
@@ -10,7 +17,8 @@ export class LoginComponent implements OnInit {
   private formModel: LoginFormData = new LoginFormData('', '');
   submitted = false;
 
-  constructor() {
+  constructor(private cookieService: CookieService,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -18,15 +26,22 @@ export class LoginComponent implements OnInit {
 
 
   onSubmit() {
-    this.submitted = true;
 
     return fetch('http://localhost:4000/session/login?login='
       + this.formModel.login
       + '&password=' + this.formModel.password
     )
-      .then(response => {
-        //TODO проверить что вернул сервер, проверить ответ json
-        console.log(response.json());
+      .then(response => response.json())
+      .then((r: LoginResult) => {
+          if (r.result === true) {
+            this.cookieService.set('token', r.token);
+            this.submitted = true;
+            this.router.navigate(['/admin']);
+          } else {
+            alert('Login failed');
+            this.submitted = false;
+            // this.router.navigate(['/admin/login']);
+          }
         }
       );
   }

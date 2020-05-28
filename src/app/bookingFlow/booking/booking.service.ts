@@ -13,13 +13,19 @@ export default class BookingService {
     this.selectedTimeSlot = slot;
   }
 
-  getBookings( week: number ) {
+  // user booking
+  getBookings(week: number) {
     return fetch(`http://localhost:4000/booking?week=${week}`)
-        .then(response => response.json());
+      .then(response => response.json());
   }
 
-  bookTime( bookingData ) {
+  // admin booking
+  getBookingsAdmin(week: number, token: string) {
+    return fetch(`http://localhost:4000/booking/admin?week=${week}&token=${token}`)
+      .then(response => response.json());
+  }
 
+  bookTime(bookingData) {
     return fetch(`http://localhost:4000/booking`, {
       method: 'POST',
       headers: {
@@ -28,10 +34,9 @@ export default class BookingService {
       body: JSON.stringify(bookingData),
     })
       .then(response => response.json());
-
   }
 
-  cancelAppointment( bookingCode ) {
+  cancelAppointment(bookingCode) {
 
     return fetch(`http://localhost:4000/booking?bookingCode=${bookingCode}`, {
       method: 'DELETE',
@@ -40,6 +45,5 @@ export default class BookingService {
       }
     })
       .then(response => response.json());
-
   }
 }

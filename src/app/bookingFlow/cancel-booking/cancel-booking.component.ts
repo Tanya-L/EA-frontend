@@ -21,9 +21,8 @@ export class CancelBookingComponent implements OnInit {
       const formData = new FormData(event.target);
       this.bookingService.cancelAppointment(formData.get('bookingCode')).then(response => {
         if (response.result) {
-          location.pathname ='/cancel-thanks';
-        }
-        else {
+          location.pathname = '/cancel-thanks';
+        } else {
           this.isCancelError = true;
         }
       });

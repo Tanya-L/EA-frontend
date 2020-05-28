@@ -1,5 +1,5 @@
 <div [hidden]="submitted">
-  <form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="admin">
+  <form #loginForm="ngForm" class="admin">
     <div class="login card">
       <div class="form-group">
         <label for="login">Login</label>
@@ -26,9 +26,10 @@
 <!--          <div [hidden]="password.valid || password.pristine"-->
 <!--               class="alert alert-danger">-->
 <!--          </div>-->
-          <button type="submit"
+          <button (click)="onSubmit()"
                   class="btn btn-success"
-                  [disabled]="!loginForm.form.valid">Logga in
+                  [disabled]="!loginForm.form.valid">
+            Logga in
           </button>
         </div>
       </div>

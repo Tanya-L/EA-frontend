@@ -23,6 +23,7 @@ import {FormsModule} from '@angular/forms';
 import {BookingThanksComponent} from './bookingFlow/booking-thanks/booking-thanks.component';
 import {CancelThanksComponent} from './bookingFlow/cancel-thanks/cancel-thanks.component';
 import { AdminCalendarComponent } from './adminFlow/admin-calendar/admin-calendar.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { AdminCalendarComponent } from './adminFlow/admin-calendar/admin-calenda
     JwSocialButtonsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

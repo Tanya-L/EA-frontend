@@ -30,7 +30,7 @@ export class BookingFormComponent implements OnInit {
       }
     ).then(response => {
       if (response.result) {
-        location.pathname ='/booking-thanks';
+        location.pathname = '/booking-thanks';
       }
       else {
         this.isBookingError = true;
