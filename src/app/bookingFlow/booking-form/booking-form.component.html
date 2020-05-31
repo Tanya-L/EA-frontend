@@ -1,4 +1,4 @@
-<div class="bookin-form" >
+<div class="bookin-form">
   <div *ngIf="isBookingError">
     <h3 class="text-danger">Booking error: {{error}} </h3>
   </div>
@@ -68,25 +68,27 @@
 
         <div class="form-button">
           <button type="reset"
-                  class="btn btn-reset"
+                  class="btn btn-reset btn-back"
                   (click)="bookingService.selectTimeSlot(null)">
-            Go to calendar
+            <i class="material-icons">backspace</i>Ändra tid
           </button>
 
           <button type="submit"
                   class="btn btn-success"
-                  >
-            Boka tid
+          >
+            Bekräfta bokad tid
           </button>
         </div>
       </form>
     </div>
 
     <div class="col">
-
-      <h1>{{bookingService.getSelectedDateOfWeek()}}</h1>
-      <h1>{{bookingService.getSelectedDate()}}</h1>
-      <h1>{{bookingService.getSelectedTime()}}</h1>
+      <p class="taked-date">
+        Du valde:
+      </p>
+      <h3>{{bookingService.getSelectedDateOfWeek()}},</h3>
+      <h3>{{bookingService.getSelectedDate()}}</h3>
+      <h3>{{bookingService.getSelectedTime()}}</h3>
     </div>
   </div>
 </div>

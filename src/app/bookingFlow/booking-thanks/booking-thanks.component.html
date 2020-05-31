@@ -1,9 +1,9 @@
 <div class="booking-thanks" *ngIf="bookingService.selectedTimeSlot">
   <h1>Tack för din bokning!</h1>
   <div class="row skip-line">
- <div class="col">
-<p>Alltid välkommen hos oss på Kunsängens Veterinär klinik</p>
-     <p>Det går också bra att ringa oss för <span>avbokning</span> eller om du har frågor.</p>
+    <div class="col">
+      <p>Alltid välkommen hos oss på Kunsängens Veterinär klinik</p>
+      <p>Det går också bra att ringa oss för <span>avbokning</span> eller om du har frågor.</p>
       <div class="row"
            style="justify-content: center; align-items: center">
         <img class="card-img-top" [src]="phone"
@@ -12,16 +12,28 @@
       </div>
     </div>
     <div class="col">
-<app-cancel-booking></app-cancel-booking>
+      <app-cancel-booking></app-cancel-booking>
     </div>
   </div>
-
-  <h1>{{bookingService.getSelectedDateOfWeek()}}</h1>
-  <h1>{{bookingService.getSelectedDate()}}</h1>
-  <h1>{{bookingService.getSelectedTime()}}</h1>
-  <h1>Name: {{bookingService.bookingData.name}}</h1>
-  <h1>Email: {{bookingService.bookingData.email}}</h1>
-  <h1>Phone: {{bookingService.bookingData.phone}}</h1>
-  <h1>Comments: {{bookingService.bookingData.comments}}</h1>
-
+  <div >
+    <h3> Hej {{bookingService.bookingData.name}}<br>
+      Vi väntar på dig on {{bookingService.getSelectedDateOfWeek()}},
+      {{bookingService.getSelectedDate()}} kl.{{bookingService.getSelectedTime()}}
+    </h3>
+    <div class="booking-confirm-info"> Bekräfta bokning:
+      <h6>{{bookingService.getSelectedDateOfWeek()}}, {{bookingService.getSelectedDate()}}</h6>
+          <h6>Kl:{{bookingService.getSelectedTime()}}</h6>
+          <h6>Name: {{bookingService.bookingData.name}}</h6>
+          <h6>Email: {{bookingService.bookingData.email}}</h6>
+          <h6>Phone: {{bookingService.bookingData.phone}}</h6>
+          <h6>Comments: {{bookingService.bookingData.comments}}</h6>
+    </div>
+<!--    <h1>{{bookingService.getSelectedDateOfWeek()}}</h1>-->
+<!--    <h1>{{bookingService.getSelectedDate()}}</h1>-->
+<!--    <h1>{{bookingService.getSelectedTime()}}</h1>-->
+<!--    <h1>Name: {{bookingService.bookingData.name}}</h1>-->
+<!--    <h1>Email: {{bookingService.bookingData.email}}</h1>-->
+<!--    <h1>Phone: {{bookingService.bookingData.phone}}</h1>-->
+<!--    <h1>Comments: {{bookingService.bookingData.comments}}</h1>-->
+  </div>
 </div>

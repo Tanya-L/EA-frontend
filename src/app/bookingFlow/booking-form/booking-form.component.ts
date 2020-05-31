@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import BookingService from '../booking/booking.service';
 import {BookingFormData} from '../booking-form-data';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -13,19 +13,22 @@ export class BookingFormComponent implements OnInit {
   formModel: BookingFormData = new BookingFormData('', '', '', '');
   isBookingError = false;
   public error: string = '';
+
   constructor(private bookingService: BookingService,
-              private router: Router) { }
+              private router: Router) {
+  }
 
   ngOnInit() {
     if (!this.bookingService.selectedTimeSlot) {
       this.router.navigate(['/booking']);
     }
   }
+
   triggerBooking(event) {
     this.isBookingError = false;
     event.preventDefault();
     const formData = new FormData(event.target);
-    if( formData.get('name') && formData.get('email')){
+    if (formData.get('name') && formData.get('email')) {
       this.bookingService.bookTime(
         {
           timestamp: this.bookingService.selectedTimeSlot.date,

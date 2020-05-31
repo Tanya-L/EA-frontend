@@ -12,3 +12,19 @@
   display: flex;
   justify-content: space-between;
 }
+
+.btn-back{
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  border: 0;
+  padding: .2rem .4rem;
+}
+
+.btn-back i{
+  padding-right: .3em;
+}
+
+.taked-date {
+  text-align: center;
+}

@@ -19,3 +19,9 @@ span {
 .tel {
   color: red;
 }
+
+.booking-confirm-info {
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+}
