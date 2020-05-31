@@ -2,26 +2,26 @@
 
 
 <div class="admin-calendar">
-  <h1>Welcome admin</h1>
+  <h1>Välkommen admin</h1>
   <div *ngIf="!bookingService.selectedTimeSlot">
     <div class="row">
       <div class="col cweek" *ngIf="selectedWeek > currentWeek" (click)="onPrevWeekClick()">
         <i class="material-icons">arrow_back</i>
-        Last week
+        Förra veckan
       </div>
       <div class="col" *ngIf="selectedWeek <= currentWeek">
-        <s>Last week</s>
+        <s>Förra veckan</s>
       </div>
       <div class="col" *ngIf="selectedWeek == currentWeek">
 
-        <div class="cweek">Week {{currentWeek}} </div>
+        <div class="cweek">Denna vecka {{currentWeek}} </div>
       </div>
       <div class="col cweek" *ngIf="selectedWeek < currentWeek + 3" (click)="onNextWeekClick()">
-        Next week
+        Nästa vecka
         <i class="material-icons">arrow_forward</i>
       </div>
       <div class="col" *ngIf="selectedWeek >= currentWeek + 3">
-        <s>Next week</s>
+        <s>Nästa vecka</s>
       </div>
     </div>
 
@@ -42,9 +42,9 @@
           <div *ngIf="!time.available" class="booked-time">
             <button class="slot-booked">{{time.label}}</button>
             <div>{{time.booking.name}} ({{time.booking.email}})
-            <div *ngIf="time.booking.comments.trim().length" >
-              Comment: {{time.booking.comments }}
-            </div>
+              <div *ngIf="time.booking.comments.trim().length">
+                Comment: {{time.booking.comments }}
+              </div>
 
             </div>
             <button (click)="onCancel(time.booking.bookingCode)" class="btn btn-info">Avboka</button>

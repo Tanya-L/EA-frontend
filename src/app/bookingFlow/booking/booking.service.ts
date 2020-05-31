@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import moment from "moment";
+import moment from 'moment';
 
 @Injectable({
   providedIn: 'root'
@@ -53,10 +53,10 @@ export default class BookingService {
   }
 
   getSelectedDateOfWeek() {
-    return moment(this.selectedTimeSlot.date).format('dddd');
+    return moment(this.selectedTimeSlot.date).locale('sv-SE').format('dddd').toUpperCase();
   }
   getSelectedDate() {
-    return moment(this.selectedTimeSlot.date).format('DD MMMM YYYY');
+    return moment(this.selectedTimeSlot.date).locale('sv-SE').format('DD MMMM YYYY');
   }
 
   getSelectedTime() {

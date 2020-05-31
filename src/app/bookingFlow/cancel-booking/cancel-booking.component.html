@@ -5,7 +5,7 @@
         <h3>{{error}}</h3>
       </div>
       <h3>Vill du <span>AVBOKA</span> tid hos oss? </h3>
-      <p> Booking kod was sended to your email</p>
+      <p> Bokningskoden skickades till din e-post</p>
       <div class="row">
         <div class="col">
           <div class="form-group">
@@ -20,15 +20,11 @@
                    #email="ngModel"
                    [class.is-invalid]="email.invalid && email.touched"
                    required>
-            <!--            <div class="alert alert-danger"-->
-            <!--                 *ngIf="emailInput.touched && !emailInput.valid">-->
-            <!--              E-mail is required-->
-            <!--            </div>-->
           </div>
         </div>
         <div class="col">
           <div class="form-group">
-            <label for="bookingCode">Booking code</label>
+            <label for="bookingCode">Bokningskoden</label>
             <input type="text"
                    id="bookingCode"
                    name="bookingCode"
@@ -42,8 +38,7 @@
     </div>
 
     <div class="form-button">
-      <!--      что делает эта кнопка? -->
-       <button type="submit" class="btn btn-danger">AVBOKA</button>
+      <button type="submit" class="btn btn-danger">AVBOKA</button>
     </div>
   </div>
 </form>

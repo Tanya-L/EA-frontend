@@ -65,7 +65,7 @@ export class AdminCalendarComponent implements OnInit {
     const format = 'dddd, DD MMM';
     return days.map(dayObject => {
       return {
-        day: moment(dayObject.dayDate).format(format),
+        day: moment(dayObject.dayDate).locale('sv-SE').format(format).toUpperCase(),
         slots: this.getTimes(dayObject.dayDate, dayObject.slots),
       };
     });

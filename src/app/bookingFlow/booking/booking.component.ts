@@ -31,9 +31,9 @@ export class BookingComponent implements OnInit {
   getDays(days) {
     const format = 'dddd, DD MMM';
     return days.map(dayObject => {return {
-      day: moment(dayObject.dayDate).format(format),
-      date: moment(dayObject.dayDate).format('DD MMM'),
-      weekday: moment(dayObject.dayDate).format('dddd'),
+      day: moment(dayObject.dayDate).locale('sv-SE').format(format),
+      date: moment(dayObject.dayDate).locale('sv-SE').format('DD MMM'),
+      weekday: moment(dayObject.dayDate).locale('sv-SE').format('dddd').toUpperCase(),
       slots: this.getTimes(dayObject.dayDate, dayObject.slots),
     };
     });
