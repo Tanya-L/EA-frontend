@@ -23,6 +23,7 @@ export class BookingComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.bookingService.clearBooking();
     this.currentWeek = this.selectedWeek = moment().week();
     this.updateWeekView();
   }
@@ -31,6 +32,8 @@ export class BookingComponent implements OnInit {
     const format = 'dddd, DD MMM';
     return days.map(dayObject => {return {
       day: moment(dayObject.dayDate).format(format),
+      date: moment(dayObject.dayDate).format('DD MMM'),
+      weekday: moment(dayObject.dayDate).format('dddd'),
       slots: this.getTimes(dayObject.dayDate, dayObject.slots),
     };
     });

@@ -1,6 +1,10 @@
 <div [hidden]="submitted">
   <form #loginForm="ngForm" class="admin">
+
     <div class="login card">
+      <div *ngIf="error" class="text-danger">
+        {{error}}
+      </div>
       <div class="form-group">
         <label for="login">Login</label>
         <input name="login"

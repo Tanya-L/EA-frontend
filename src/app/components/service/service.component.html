@@ -1,20 +1,8 @@
-<app-nav-bar></app-nav-bar>
-
 <div *ngIf="openService === ''; else elseBlock" class="service">
   <h1>Vi erbjuder</h1>
   <app-extra-service></app-extra-service>
   <!--First row-->
   <div class="row justify-content-evenly">
-
-    <!-- 1 card -->
-    <div class="col-sm-2 card bg-light">
-      <img class="card-img-top" [src]="gastro"
-           alt="gastro" style="width: 100px; height: 100px">
-      <div class="card-body text-center">
-        <h4 class="card-title">Gastroskori</h4>
-        <p class="card-text"></p>
-      </div>
-    </div>
 
     <!-- 2 card -->
     <div class="col-sm-2 card bg-light">
@@ -23,6 +11,8 @@
       <div class="card-body text-center">
         <h4 class="card-title">Bronkoskopi</h4>
         <p class="card-text"></p>
+      </div>
+      <div class="card-footer">
         <a (click)="setService('bronko')" class="btn btn-info">Läs mer</a>
       </div>
     </div>
@@ -34,6 +24,8 @@
       <div class="card-body text-center">
         <h4 class="card-title">Kardiologi</h4>
         <p class="card-text"></p>
+      </div>
+      <div class="card-footer">
         <a (click)="setService('kardio')" class="btn btn-info">Läs mer</a>
       </div>
     </div>
@@ -45,20 +37,11 @@
       <div class="card-body text-center">
         <h4 class="card-title">Ultraljud buk och hjärta</h4>
         <p class="card-text"></p>
+      </div>
+      <div class="card-footer">
         <a (click)="setService('monitor')" class="btn btn-info">Läs mer</a>
       </div>
     </div>
-
-    <!-- 5 card -->
-    <div class="col-md-3 card bg-light">
-      <img class="card-img-top" [src]="kirurgi"
-           alt="scalpel" style="width: 100px; height: 100px">
-      <div class="card-body text-center">
-        <h4 class="card-title">Mjukdelskirurgi</h4>
-        <p class="card-text"></p>
-      </div>
-    </div>
-
     <!-- 6 card -->
     <div class="col-md-3 card bg-light">
       <img class="card-img-top" [src]="blood"
@@ -66,6 +49,8 @@
       <div class="card-body text-center">
         <h4 class="card-title">Blodprovstagning och diagnostik på plats</h4>
         <p class="card-text"></p>
+      </div>
+      <div class="card-footer">
         <a (click)="setService('blood')" class="btn btn-info">Läs mer</a>
       </div>
     </div>
@@ -80,6 +65,8 @@
       <div class="card-body text-center">
         <h4 class="card-title">Sövning av patienter med hjärtproblem</h4>
         <p class="card-text"></p>
+      </div>
+      <div class="card-footer">
         <a (click)="setService('ekg')" class="btn btn-info">Läs mer</a>
       </div>
     </div>
@@ -91,6 +78,8 @@
       <div class="card-body text-center">
         <h4 class="card-title">Tandvård</h4>
         <p class="card-text"></p>
+      </div>
+      <div class="card-footer">
         <a (click)="setService('molar')" class="btn btn-info">Läs mer</a>
       </div>
     </div>
@@ -102,6 +91,8 @@
       <div class="card-body text-center">
         <h4 class="card-title">Vaccinationer, besiktning</h4>
         <p class="card-text"></p>
+      </div>
+      <div class="card-footer">
         <a (click)="setService('syringe')" class="btn btn-info">Läs mer</a>
       </div>
     </div>
@@ -113,6 +104,8 @@
       <div class="card-body text-center">
         <h4 class="card-title">Dialys</h4>
         <p class="card-text"></p>
+      </div>
+      <div class="card-footer">
         <a (click)="setService('dialys')" class="btn btn-info">Läs mer</a>
       </div>
     </div>
@@ -134,12 +127,30 @@
         <p class="card-text"></p>
       </div>
     </div>
+    <!-- 5 card -->
+    <div class="col-md-3 card bg-light">
+      <img class="card-img-top" [src]="kirurgi"
+           alt="scalpel" style="width: 100px; height: 100px">
+      <div class="card-body text-center">
+        <h4 class="card-title">Mjukdelskirurgi</h4>
+        <p class="card-text"></p>
+      </div>
+    </div>
+    <!-- 1 card -->
+    <div class="col-sm-3 card bg-light">
+      <img class="card-img-top" [src]="gastro"
+           alt="gastro" style="width: 100px; height: 100px">
+      <div class="card-body text-center">
+        <h4 class="card-title">Gastroskori</h4>
+        <p class="card-text"></p>
+      </div>
+    </div>
   </div>
 </div>
 
 <ng-template #elseBlock>
   <div class="service-back-button">
-    <button (click)="setService('')" class="btn-info">
+    <button (click)="setService('')" class="btn-info btn-back">
       <i class="material-icons">backspace</i> Go back</button>
   </div>
   <div [ngSwitch]="openService" class="service-article">

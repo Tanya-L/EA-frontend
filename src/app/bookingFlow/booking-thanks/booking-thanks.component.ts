@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Phone from '../../components/contact/assets/headphones.png';
-
+import BookingService from '../booking/booking.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-booking-thanks',
@@ -10,9 +11,14 @@ import * as Phone from '../../components/contact/assets/headphones.png';
 export class BookingThanksComponent implements OnInit {
   public phone: string = Phone.default;
 
-  constructor() { }
+  constructor(private bookingService: BookingService,
+              private router: Router) { }
 
   ngOnInit() {
+    if (!this.bookingService.selectedTimeSlot) {
+      this.router.navigate(['/booking']);
+    }
   }
+
 
 }

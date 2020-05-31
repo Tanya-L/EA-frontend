@@ -17,7 +17,7 @@ div.weekday {
   margin: 10px;
   flex: 0 0 calc(20% - 20px);
   max-width: 20%;
-  padding: 30px 10px 20px;
+  padding: 10px 10px 20px;
   background-color: white;
   border-color: #888888;
   border-radius: 5px;
@@ -26,20 +26,20 @@ div.weekday {
 .slot {
   color: green;
   margin: .5rem;
-  border-radius: 8px;
   padding: .5rem;
   width: 50%;
   font-size: 1.5em;
 }
-
-.slot-booked {
-  color: red;
-  margin: .5rem;
-  border-radius: 8px;
-  padding: .5rem;
-  width: 50%;
-  text-decoration: line-through;
-  font-size: 1em;
+.booked-time{
+  background-color: rgba(118,118,118, 0.1);
+  padding: 0.5em;
+  margin: 0.3em auto;
+}
+.booked-time .slot-booked {
+  text-decoration: none;
+  color: black;
+  margin: 0;
+  padding: 0;
 }
 
 .cweek {

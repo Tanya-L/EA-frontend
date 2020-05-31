@@ -1,6 +1,7 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import BookingService from '../booking/booking.service';
 import {UnbookFormData} from '../unbook-form-data';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-cancel-booking',
@@ -10,7 +11,9 @@ import {UnbookFormData} from '../unbook-form-data';
 export class CancelBookingComponent implements OnInit {
   formModel: UnbookFormData = new UnbookFormData('', '');
   isCancelError = false;
-  constructor(private bookingService: BookingService) { }
+  public error = '';
+  constructor(private bookingService: BookingService,
+              private router: Router) { }
 
   ngOnInit() {
   }
@@ -21,9 +24,10 @@ export class CancelBookingComponent implements OnInit {
       const formData = new FormData(event.target);
       this.bookingService.cancelAppointment(formData.get('bookingCode')).then(response => {
         if (response.result) {
-          location.pathname = '/cancel-thanks';
+          this.router.navigate(['/cancel-thanks']) ;
         } else {
           this.isCancelError = true;
+          this.error = this.bookingService.getError(response.reason);
         }
       });
     }

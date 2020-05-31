@@ -11,19 +11,25 @@
   padding: 15px;
   background-color: #9adcef;
 }
-
+.service .card-footer {
+  background-color: transparent;
+  border: 0;
+}
+.service .card-footer .btn-info{
+  width: 100%;
+}
 .card {
   align-items: center;
   margin: 10px 0;
   padding: 30px 10px 20px;
-  flex: 0 0 calc(15% - 10px);
-  max-width: 15%;
+  flex: 0 0 calc(22% + 10px);
+  max-width: 23%;
 }
 
 .service-back-button{
   position: absolute;
   z-index: 1;
-  top: calc(62px + 2em);
+  top: 2em;
   left: 2em;
   background: transparent;
   border: none;
@@ -64,4 +70,15 @@
   font-size: 1.5rem;
   text-align: left;
   margin: 0;
+}
+.btn-back{
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  border: 0;
+  padding: .2rem .4rem;
+}
+
+.btn-back i{
+  padding-right: .3em;
 }

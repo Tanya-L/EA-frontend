@@ -1,8 +1,8 @@
 <form class="cancel-form was-validated" (ngSubmit)="onCancel($event)">
   <div class="cancel card">
     <div class="form-group">
-      <div *ngIf="isCancelError">
-        <h1>ERROR!!!</h1>
+      <div *ngIf="isCancelError" class="text-danger">
+        <h3>{{error}}</h3>
       </div>
       <h3>Vill du <span>AVBOKA</span> tid hos oss? </h3>
       <p> Booking kod was sended to your email</p>

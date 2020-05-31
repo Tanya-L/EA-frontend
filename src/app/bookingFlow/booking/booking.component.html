@@ -1,4 +1,4 @@
-<app-nav-bar></app-nav-bar>
+
 <div class="book">
   <h1>Boka tid</h1>
   <div class="row skip-line">
@@ -44,7 +44,8 @@
 
     <div class="row justify-content-evenly">
       <div *ngFor="let day of timeSlots" class="calendar">
-        <div class="weekday">{{day.day}}</div>
+        <div class="weekday">{{day.weekday}}</div>
+        <div class="date">{{day.date}}</div>
         <div *ngFor="let time of day.slots">
           <div *ngIf="time.available" (click)="bookingService.selectTimeSlot(time)">
             <button class="slot">{{time.label}}</button>

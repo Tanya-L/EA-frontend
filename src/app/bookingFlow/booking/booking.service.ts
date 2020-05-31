@@ -1,18 +1,22 @@
 import {Injectable} from '@angular/core';
+import moment from "moment";
 
 @Injectable({
   providedIn: 'root'
 })
 export default class BookingService {
   public selectedTimeSlot = null;
-
+  public bookingData = null;
   constructor() {
   }
 
   selectTimeSlot(slot) {
     this.selectedTimeSlot = slot;
   }
-
+  clearBooking() {
+    this.selectedTimeSlot = null;
+    this.bookingData = null;
+  }
   // user booking
   getBookings(week: number) {
     return fetch(`http://localhost:4000/booking?week=${week}`)
@@ -26,6 +30,7 @@ export default class BookingService {
   }
 
   bookTime(bookingData) {
+    this.bookingData = bookingData.booking;
     return fetch(`http://localhost:4000/booking`, {
       method: 'POST',
       headers: {
@@ -45,5 +50,31 @@ export default class BookingService {
       }
     })
       .then(response => response.json());
+  }
+
+  getSelectedDateOfWeek() {
+    return moment(this.selectedTimeSlot.date).format('dddd');
+  }
+  getSelectedDate() {
+    return moment(this.selectedTimeSlot.date).format('DD MMMM YYYY');
+  }
+
+  getSelectedTime() {
+    return moment(this.selectedTimeSlot.date).utc(false).format('HH:mm');
+  }
+
+  getError(errorCode) {
+    switch (errorCode) {
+      case 'notExists':
+        return 'The booking code is not valid';
+      case 'inThePast':
+        return 'The time is passed, please select another time slot';
+      case 'bookingExists':
+        return 'This time is already booked, please select another time slot';
+      case 'notWorkingDay':
+        return 'This time is not available, please select another time slot';
+      default:
+        return 'Ooops! Something went wrong. Please try again later!';
+    }
   }
 }

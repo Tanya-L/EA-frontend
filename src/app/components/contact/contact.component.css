@@ -29,7 +29,8 @@ ul {
   list-style-type: none;
   margin: 0;
   padding-left: 0px;
-  text-align: center;
+  text-align: justify; /* For Edge */
+  text-align-last: justify;
 }
 
 .card-text, li, time {

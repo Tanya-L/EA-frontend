@@ -59,3 +59,17 @@ a:hover {
 .btn-secondary {
   border-color: #24292e;
 }
+
+.margin-0{
+  margin: 0;
+}
+
+.btn, button {
+  cursor: pointer;
+}
+.outer-container{}
+.inner-container{
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+}

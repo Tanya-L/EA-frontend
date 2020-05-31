@@ -53,6 +53,7 @@ export class AdminCalendarComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.bookingService.clearBooking();
     this.currentWeek = this.selectedWeek = moment().week();
 
     this.adminToken = this.cookieService.get('token');
@@ -117,5 +118,12 @@ export class AdminCalendarComponent implements OnInit {
           this.timeSlots = this.getDays(json.result);
         }
       });
+  }
+  onCancel(code) {
+    this.bookingService.cancelAppointment(code).then(response => {
+      if (response.result) {
+        this.updateWeekView();
+      }
+    });
   }
 }

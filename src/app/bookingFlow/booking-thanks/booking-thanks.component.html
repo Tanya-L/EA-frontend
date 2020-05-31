@@ -1,5 +1,4 @@
-<app-nav-bar></app-nav-bar>
-<div class="booking-thanks">
+<div class="booking-thanks" *ngIf="bookingService.selectedTimeSlot">
   <h1>Tack för din bokning!</h1>
   <div class="row skip-line">
  <div class="col">
@@ -17,6 +16,12 @@
     </div>
   </div>
 
-  тут будет перечисление букинга, со всеми подробностями
+  <h1>{{bookingService.getSelectedDateOfWeek()}}</h1>
+  <h1>{{bookingService.getSelectedDate()}}</h1>
+  <h1>{{bookingService.getSelectedTime()}}</h1>
+  <h1>Name: {{bookingService.bookingData.name}}</h1>
+  <h1>Email: {{bookingService.bookingData.email}}</h1>
+  <h1>Phone: {{bookingService.bookingData.phone}}</h1>
+  <h1>Comments: {{bookingService.bookingData.comments}}</h1>
 
 </div>

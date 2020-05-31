@@ -1,10 +1,9 @@
-<app-nav-bar></app-nav-bar>
 <!--admin calendar-->
 
 
 <div class="admin-calendar">
   <h1>Welcome admin</h1>
-  <div *ngIf="!bookingService.selectedTimeSlot && !bookingService.isCancelling">
+  <div *ngIf="!bookingService.selectedTimeSlot">
     <div class="row">
       <div class="col cweek" *ngIf="selectedWeek > currentWeek" (click)="onPrevWeekClick()">
         <i class="material-icons">arrow_back</i>
@@ -13,7 +12,6 @@
       <div class="col" *ngIf="selectedWeek <= currentWeek">
         <s>Last week</s>
       </div>
-      <!--      TODO сделать чтобы при переходе на другие недели эта переменная менялась-->
       <div class="col" *ngIf="selectedWeek == currentWeek">
 
         <div class="cweek">Week {{currentWeek}} </div>
@@ -41,15 +39,21 @@
            если booking.isActive===false тогда рисовать данные перечеркнутые как отмена
            если нет booking или {} пустой тогда время свободно
            -->
-          <div *ngIf="!time.available">
+          <div *ngIf="!time.available" class="booked-time">
             <button class="slot-booked">{{time.label}}</button>
-            <div>{{time.booking.name}} ({{time.booking.phone}})
-              comment: {{time.booking.comments}}
+            <div>{{time.booking.name}} ({{time.booking.email}})
+            <div *ngIf="time.booking.comments.trim().length" >
+              Comment: {{time.booking.comments }}
             </div>
-            <button>Avboka {{time.booking.bookingCode}}</button>
+
+            </div>
+            <button (click)="onCancel(time.booking.bookingCode)" class="btn btn-info">Avboka</button>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <div class="col" *ngIf="bookingService.selectedTimeSlot;">
+    <app-booking-form></app-booking-form>
   </div>
 </div>
