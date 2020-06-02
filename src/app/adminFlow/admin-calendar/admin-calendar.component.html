@@ -41,8 +41,8 @@
            -->
           <div *ngIf="!time.available" class="booked-time">
             <button class="slot-booked">{{time.label}}</button>
-            <div>{{time.booking.name}} ({{time.booking.email}})
-              <div *ngIf="time.booking.comments.trim().length">
+            <div>{{time.booking.name}} ({{time.booking.phone}})
+              <div *ngIf="time.booking.comments && time.booking.comments.trim().length">
                 Comment: {{time.booking.comments }}
               </div>
 
