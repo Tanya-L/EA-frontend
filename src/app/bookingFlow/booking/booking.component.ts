@@ -17,7 +17,8 @@ export class BookingComponent implements OnInit {
   slots: any;
   currentWeek: number;
   selectedWeek: number;
-  public weekTimeSlots = [];
+
+  // public weekTimeSlots = [];
 
   constructor(private bookingService: BookingService) {
   }
@@ -30,12 +31,13 @@ export class BookingComponent implements OnInit {
 
   getDays(days) {
     const format = 'dddd, DD MMM';
-    return days.map(dayObject => {return {
-      day: moment(dayObject.dayDate).locale('sv-SE').format(format),
-      date: moment(dayObject.dayDate).locale('sv-SE').format('DD MMM'),
-      weekday: moment(dayObject.dayDate).locale('sv-SE').format('dddd').toUpperCase(),
-      slots: this.getTimes(dayObject.dayDate, dayObject.slots),
-    };
+    return days.map(dayObject => {
+      return {
+        day: moment(dayObject.dayDate).locale('sv-SE').format(format),
+        date: moment(dayObject.dayDate).locale('sv-SE').format('DD MMM'),
+        weekday: moment(dayObject.dayDate).locale('sv-SE').format('dddd').toUpperCase(),
+        slots: this.getTimes(dayObject.dayDate, dayObject.slots),
+      };
     });
   }
 
