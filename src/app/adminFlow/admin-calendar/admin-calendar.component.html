@@ -41,13 +41,14 @@
            -->
           <div *ngIf="!time.available" class="booked-time">
             <button class="slot-booked">{{time.label}}</button>
-            <div>{{time.booking.name}} ({{time.booking.phone}})
-              <div *ngIf="time.booking.comments && time.booking.comments.trim().length">
-                Comment: {{time.booking.comments }}
+            <div *ngIf="time.booking">
+              <div>{{time.booking.name}} ({{time.booking.phone}})
+                <div *ngIf="time.booking.comments && time.booking.comments.trim().length">
+                  Comment: {{time.booking.comments }}
+                </div>
               </div>
-
+              <button (click)="onCancel(time.booking.bookingCode)" class="btn btn-info">Avboka</button>
             </div>
-            <button (click)="onCancel(time.booking.bookingCode)" class="btn btn-info">Avboka</button>
           </div>
         </div>
       </div>
