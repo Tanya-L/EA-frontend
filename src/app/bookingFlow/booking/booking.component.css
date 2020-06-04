@@ -29,6 +29,16 @@ div.date {
   border-radius: 5px;
 }
 
+@media (max-width: 576px) {
+  .calendar {
+    align-items: center;
+    margin: 10px;
+    flex: 0 0 calc(90% - 20px);
+    max-width: 90%;
+    padding: 10px 10px 20px;
+  }
+}
+
 .card-text {
   font-size: 1em;
 }

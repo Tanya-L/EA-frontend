@@ -26,6 +26,16 @@
   max-width: 23%;
 }
 
+@media (max-width: 576px) {
+  .card {
+    align-items: center;
+    margin: 10px;
+    flex: 0 0 calc(90% - 20px);
+    max-width: 90%;
+    padding: 30px 10px 20px;
+  }
+}
+
 .service-back-button{
   position: absolute;
   z-index: 1;

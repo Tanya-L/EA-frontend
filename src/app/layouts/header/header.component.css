@@ -34,3 +34,9 @@
   font-weight: bold;
   color: white;
 }
+
+@media (max-width: 576px) {
+  .header h1.extra-text {
+    display: none;
+  }
+}
