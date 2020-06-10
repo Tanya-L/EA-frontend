@@ -22,16 +22,33 @@ export interface AdminBookingSlot {
 
 // Comes to the HTML template after processing AdminBookingSlot's
 export interface DisplayBookingSlot {
-  date: string;
+  date: moment.Moment;
   label: string;
   available: boolean;
   booking?: Booking;
 }
 
+export class DisplayBookingSlotImpl implements DisplayBookingSlot {
+  constructor(public date: moment.Moment,
+              public label: string,
+              public available: boolean,
+              public booking: Booking) {
+  }
+}
+
 export interface DaySchedule {
   dayDate: string;
   day?: string;
-  slots: AdminBookingSlot[];
+  weekday?: string;
+  slots: DisplayBookingSlot[];
+}
+
+export class DayScheduleImpl implements DaySchedule {
+  constructor(
+    public day: string,
+    public dayDate: string,
+    public slots: DisplayBookingSlot[],
+    public weekday: string) {}
 }
 
 @Component({
@@ -72,28 +89,17 @@ export class AdminCalendarComponent implements OnInit {
   }
 
   getTimes(date: moment.Moment, slots: AdminBookingSlot[]): DisplayBookingSlot[] {
-    const day = moment(date);
+    const dayStart = moment(date);
     return slots.map((slot: AdminBookingSlot) => {
-      const time = day.hour(slot.hour).minutes(0).utc(true);
-      return {
-        date: time.format(),
-        label: time.format('HH:mm'),
-        available: this.isTimeAvailable(time) && slot.available,
-        booking: slot.booking,
-      };
+      const time: moment.Moment = moment(dayStart).add(slot.hour, 'h');
+      return new DisplayBookingSlotImpl(
+        time,
+        moment(time).format('HH:mm'),
+        this.isTimeAvailable(time) && slot.available,
+        slot.booking,
+      );
     });
   }
-
-
-  // getTimeSlot(time) {
-  //   return {
-  //     date: time.format(),
-  //     label: time.format('HH:mm'),
-  //     available: this.isTimeAvailable(time),
-  //   };
-  //
-  // }
-
 
   isTimeAvailable(time) {
     return time.isAfter(moment());
@@ -119,6 +125,7 @@ export class AdminCalendarComponent implements OnInit {
         }
       });
   }
+
   onCancel(code) {
     this.bookingService.cancelAppointment(code).then(response => {
       if (response.result) {

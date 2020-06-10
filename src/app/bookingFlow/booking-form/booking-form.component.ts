@@ -29,9 +29,10 @@ export class BookingFormComponent implements OnInit {
     event.preventDefault();
     const formData = new FormData(event.target);
     if (formData.get('name') && formData.get('email')) {
+      console.log(`selected date: ${this.bookingService.selectedTimeSlot.date.toISOString()}`);
       this.bookingService.bookTime(
         {
-          timestamp: this.bookingService.selectedTimeSlot.date,
+          timestamp: this.bookingService.selectedTimeSlot.date.toISOString(),
           booking: {
             name: formData.get('name'),
             email: formData.get('email'),

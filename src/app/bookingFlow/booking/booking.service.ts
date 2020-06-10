@@ -1,22 +1,29 @@
 import {Injectable} from '@angular/core';
 import moment from 'moment';
+import {DisplayBookingSlot} from '../../adminFlow/admin-calendar/admin-calendar.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export default class BookingService {
-  public selectedTimeSlot = null;
+  public selectedTimeSlot: DisplayBookingSlot = null;
   public bookingData = null;
+
   constructor() {
   }
 
   selectTimeSlot(slot) {
+    if (slot) {
+      console.log(`clicked date: ${slot.date.toISOString()}`);
+    }
     this.selectedTimeSlot = slot;
   }
+
   clearBooking() {
     this.selectedTimeSlot = null;
     this.bookingData = null;
   }
+
   // user booking
   getBookings(week: number) {
     return fetch(`http://localhost:4000/booking?week=${week}`)
@@ -42,7 +49,6 @@ export default class BookingService {
   }
 
   cancelAppointment(bookingCode) {
-
     return fetch(`http://localhost:4000/booking?bookingCode=${bookingCode}`, {
       method: 'DELETE',
       headers: {
@@ -55,12 +61,13 @@ export default class BookingService {
   getSelectedDateOfWeek() {
     return moment(this.selectedTimeSlot.date).locale('sv-SE').format('dddd').toUpperCase();
   }
+
   getSelectedDate() {
     return moment(this.selectedTimeSlot.date).locale('sv-SE').format('DD MMMM YYYY');
   }
 
   getSelectedTime() {
-    return moment(this.selectedTimeSlot.date).utc(false).format('HH:mm');
+    return moment(this.selectedTimeSlot.date).format('HH:mm');
   }
 
   getError(errorCode) {

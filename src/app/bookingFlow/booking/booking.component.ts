@@ -4,6 +4,11 @@ import * as Phone from '../../components/contact/assets/headphones.png';
 import moment from 'moment';
 import BookingService from './booking.service';
 import {bookedData} from '../bookingdata';
+import {
+  DaySchedule, DayScheduleImpl,
+  DisplayBookingSlot,
+  DisplayBookingSlotImpl
+} from "../../adminFlow/admin-calendar/admin-calendar.component";
 
 @Component({
   selector: 'app-booking',
@@ -29,27 +34,27 @@ export class BookingComponent implements OnInit {
     this.updateWeekView();
   }
 
-  getDays(days) {
+  getDays(days): DaySchedule {
     const format = 'dddd, DD MMM';
     return days.map(dayObject => {
-      return {
-        day: moment(dayObject.dayDate).locale('sv-SE').format(format),
-        date: moment(dayObject.dayDate).locale('sv-SE').format('DD MMM'),
-        weekday: moment(dayObject.dayDate).locale('sv-SE').format('dddd').toUpperCase(),
-        slots: this.getTimes(dayObject.dayDate, dayObject.slots),
-      };
+      const dayDate = moment(dayObject.dayDate);
+      return new DayScheduleImpl(
+        dayDate.locale('sv-SE').format(format),
+        dayDate.locale('sv-SE').format('DD MMM'),
+        this.getTimes(dayDate, dayObject.slots),
+        dayDate.locale('sv-SE').format('dddd').toUpperCase());
     });
   }
 
-  getTimes(date, slots) {
-    const day = moment(date);
+  getTimes(day: moment.Moment, slots): DisplayBookingSlot[] {
     return slots.map(slot => {
-      const time = day.hour(slot.hour).minutes(0).utc(true);
-      return {
-        date: time.format(),
-        label: time.format('HH:mm'),
-        available: this.isTimeAvailable(time) && slot.available,
-      };
+      const slotTime: moment.Moment = moment(day).add(slot.hour, 'h');
+      return new DisplayBookingSlotImpl(
+        slotTime,
+        moment(slotTime).format('HH:mm'),
+        this.isTimeAvailable(slotTime) && slot.available,
+        null
+      );
     });
   }
 
@@ -70,7 +75,9 @@ export class BookingComponent implements OnInit {
 
   private updateWeekView() {
     this.bookingService.getBookings(this.selectedWeek).then(json => {
+      console.log(json.result);
       this.timeSlots = this.getDays(json.result);
+      console.log(this.timeSlots);
     });
   }
 }
